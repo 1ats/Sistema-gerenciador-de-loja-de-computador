@@ -13,10 +13,10 @@ import view.SACMensagem;
 public class ControleMensagem implements ActionListener {
 
     public static JDesktopPane jdprincipal;
-
-    private SACMensagem smensagem;
-
-    public ControleMensagem(SACMensagem smensagem) {
+    
+    private SACMensagem  smensagem;
+    
+    public  ControleMensagem(SACMensagem smensagem) {
         this.smensagem = smensagem;
     }
 

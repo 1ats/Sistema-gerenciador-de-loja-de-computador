@@ -41,7 +41,13 @@ public class ControleVenda implements ActionListener {
             Venda clicod = new Venda();
             venda.add(clicod);
             clicod.setVisible(true);
-        } else {
+        }
+        if ("modoPagamento".equalsIgnoreCase(e.getActionCommand())){
+            Venda modpag = new Venda();
+            venda.add(modpag);
+            modpag.setVisible(true);
+        }
+        else{
             Venda prod = new Venda();
             venda.add(prod);
             prod.setVisible(true);

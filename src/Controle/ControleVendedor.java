@@ -72,5 +72,27 @@ public class ControleVendedor implements ActionListener {
             cadvendedor.add(telefone);
             telefone.setVisible(true);
         }
+        if ("dia".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroVendedor dia = new CadastroVendedor();
+            cadvendedor.add(dia);
+            dia.setVisible(true);
+        }if ("mes".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroVendedor mes = new CadastroVendedor();
+            cadvendedor.add(mes);
+            mes.setVisible(true);
+        }if ("ano".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroVendedor ano = new CadastroVendedor();
+            cadvendedor.add(ano);
+            ano.setVisible(true);
+        }
+        if ("sexo".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroVendedor sexo = new CadastroVendedor();
+            cadvendedor.add(sexo);
+            sexo.setVisible(true);
+        }if ("estadoCivil".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroVendedor estadocivil = new CadastroVendedor();
+            cadvendedor.add(estadocivil);
+            estadocivil.setVisible(true);
+        }
     }
 }

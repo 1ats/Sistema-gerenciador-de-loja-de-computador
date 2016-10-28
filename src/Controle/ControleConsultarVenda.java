@@ -16,8 +16,8 @@ public class ControleConsultarVenda implements ActionListener {
 
     public static JDesktopPane jdprincipal;
     private ConsultarVenda cvenda;
-
-    public ControleConsultarVenda(ConsultarVenda cvenda) {
+    
+    public  ControleConsultarVenda(ConsultarVenda cvenda) {
         this.cvenda = cvenda;
     }
 

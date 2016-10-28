@@ -21,6 +21,13 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
      */
     public CadastroAdministrador() {
         initComponents();
+        
+        //String itemSelecionaDia = (String)dia.getSelectedItem();
+        //String itemSelecionaMes = (String)mes.getSelectedItem();
+        //String itemSelecionaAno = (String)ano.getSelectedItem();
+        //String itemSelecionaSexo = (String)sexo.getSelectedItem();
+        //String itemSelecionaEstadoCivil = (String)estadoCivil.getSelectedItem();
+        
     }
 
     /**
@@ -156,7 +163,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             }
         });
 
-        mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", " ", " " }));
+        mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", "", "" }));
         mes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mesActionPerformed(evt);
