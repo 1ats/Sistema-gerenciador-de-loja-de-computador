@@ -1,29 +1,33 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Controle;
 
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
-import view.CadastroCliente;
-import view.ConsultarVenda;
+import view.Venda;
 
 /**
  *
  * @author aminathamiguel
  */
 public class ControleVenda {
+    
     public static JDesktopPane jdprincipal;
-    
-    private ConsultarVenda cadvenda;
-    
-    public  ControleVenda(ConsultarVenda frame1) {
-        this.cadvenda = cadvenda;
+
+    private Venda venda;
+
+    public ControleVenda(Venda frame1) {
+        this.venda = venda;
     }
-    
-    public  ControleVenda(JDesktopPane jdprincial) {
+
+    public ControleVenda(JDesktopPane jdprincial) {
         ControleVenda.jdprincipal = jdprincial;
     }
 
-    public void CadastroVen(JInternalFrame jInternalFrame) {
+    public void Vendas(JInternalFrame jInternalFrame) {
         if (jInternalFrame.isVisible()) {
             jInternalFrame.toFront();
             jInternalFrame.requestFocus();
