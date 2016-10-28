@@ -9,7 +9,6 @@ import view.CadastroAdministrador;
 public class ControleAdministrador implements ActionListener {
 
     public static JDesktopPane jdprincipal;
-
     private CadastroAdministrador cadadmin;
 
     public ControleAdministrador(CadastroAdministrador frame1) {
