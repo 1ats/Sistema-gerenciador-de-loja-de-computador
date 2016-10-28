@@ -282,9 +282,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsultarActionPerformed
         // TODO add your handling code here:
-        ConsultarVenda cvenda = new ConsultarVenda();
-        jdprincipal.add(cvenda);
-        cvenda.setVisible(true);
+        cvenda.CadastroConsulVend(ConsultarVenda.getInstancia());
     }//GEN-LAST:event_jMenuItemConsultarActionPerformed
 
     private void jMenuItemFinalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFinalizarProgramaActionPerformed
@@ -299,9 +297,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRealizarActionPerformed
         // TODO add your handling code here:
-        Venda v = new Venda();
-        jdprincipal.add(v);
-        v.setVisible(true);
+        venda.Vendas(Venda.getInstancia());
     }//GEN-LAST:event_jMenuItemRealizarActionPerformed
 
     private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
@@ -331,30 +327,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void sacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sacActionPerformed
         // TODO add your handling code here:
-        SACMensagem sacmen = new SACMensagem();
-        jdprincipal.add(sacmen);
-        sacmen.setVisible(true);
+        smensagem.SACMens(SACMensagem.getInstancia());
     }//GEN-LAST:event_sacActionPerformed
 
     private void realizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarVendaActionPerformed
         // TODO add your handling code here:
-        Venda v = new Venda();
-        jdprincipal.add(v);
-        v.setVisible(true);
+        venda.Vendas(Venda.getInstancia());
     }//GEN-LAST:event_realizarVendaActionPerformed
 
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
         // TODO add your handling code here:
-        CadastroComputadores cadcomp = new CadastroComputadores();
-        jdprincipal.add(cadcomp);
-        cadcomp.setVisible(true);
+        cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
     }//GEN-LAST:event_cadastrarProdutoActionPerformed
 
     private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
         // TODO add your handling code here:
-        CadastroCliente cadcli = new CadastroCliente();
-        jdprincipal.add(cadcli);
-        cadcli.setVisible(true);
+        cadcliente.CadastroCl(CadastroCliente.getInstancia());
     }//GEN-LAST:event_cadastrarClienteActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
