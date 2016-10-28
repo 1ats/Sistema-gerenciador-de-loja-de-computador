@@ -5,6 +5,7 @@
  */
 package Controle;
 
+import java.awt.event.ActionEvent;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.Venda;
@@ -37,5 +38,17 @@ public class ControleVenda {
             jInternalFrame.setVisible(true);
         }
     }
-    
+
+    public void actionPerformed(ActionEvent e) {
+        if ("clienteCodigo".equalsIgnoreCase(e.getActionCommand())) {
+            Venda clicod = new Venda();
+            venda.add(clicod);
+            clicod.setVisible(true);
+        }
+        else{
+            Venda prod = new Venda();
+            venda.add(prod);
+            prod.setVisible(true);  
+        }
+    }
 }

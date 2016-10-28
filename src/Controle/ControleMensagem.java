@@ -1,6 +1,7 @@
 
 package Controle;
 
+import java.awt.event.ActionEvent;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.SACMensagem;
@@ -33,5 +34,16 @@ public class ControleMensagem {
         }
     }
     
-    
+public void actionPerformed(ActionEvent e) {
+        if ("cliente".equalsIgnoreCase(e.getActionCommand())) {
+            SACMensagem cliente = new SACMensagem();
+            smensagem.add(cliente);
+            cliente.setVisible(true);
+        }
+        else{
+            SACMensagem mensagem = new SACMensagem();
+            smensagem.add(mensagem);
+            mensagem.setVisible(true);
+        }
+    }    
 }
