@@ -11,7 +11,7 @@ public class ControleAdministrador implements ActionListener {
     public static JDesktopPane jdprincipal;
     private CadastroAdministrador cadadmin;
 
-    public ControleAdministrador(CadastroAdministrador frame1) {
+    public ControleAdministrador(CadastroAdministrador cadadmin) {
         this.cadadmin = cadadmin;
     }
 
@@ -66,6 +66,27 @@ public class ControleAdministrador implements ActionListener {
             cadadmin.add(telefone);
             telefone.setVisible(true);
         }
-        // Falta data, sexo e estado civil
+        if ("dia".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador dia = new CadastroAdministrador();
+            cadadmin.add(dia);
+            dia.setVisible(true);
+        }if ("mes".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador mes = new CadastroAdministrador();
+            cadadmin.add(mes);
+            mes.setVisible(true);
+        }if ("ano".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador ano = new CadastroAdministrador();
+            cadadmin.add(ano);
+            ano.setVisible(true);
+        }
+        if ("sexo".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador sexo = new CadastroAdministrador();
+            cadadmin.add(sexo);
+            sexo.setVisible(true);
+        }if ("estadoCivil".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador estadocivil = new CadastroAdministrador();
+            cadadmin.add(estadocivil);
+            estadocivil.setVisible(true);
+        }
     }
 }

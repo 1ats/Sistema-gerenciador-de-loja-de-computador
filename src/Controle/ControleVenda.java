@@ -20,7 +20,7 @@ public class ControleVenda {
 
     private Venda venda;
 
-    public ControleVenda(Venda frame1) {
+    public ControleVenda(Venda venda) {
         this.venda = venda;
     }
 
@@ -44,6 +44,11 @@ public class ControleVenda {
             Venda clicod = new Venda();
             venda.add(clicod);
             clicod.setVisible(true);
+        }
+        if ("modoPagamento".equalsIgnoreCase(e.getActionCommand())){
+            Venda modpag = new Venda();
+            venda.add(modpag);
+            modpag.setVisible(true);
         }
         else{
             Venda prod = new Venda();

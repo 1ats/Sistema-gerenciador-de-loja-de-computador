@@ -17,7 +17,7 @@ public class ControleCliente {
 
     private CadastroCliente cadcliente;
 
-    public ControleCliente(CadastroCliente frame1) {
+    public ControleCliente(CadastroCliente cadcliente) {
         this.cadcliente = cadcliente;
     }
 
@@ -58,9 +58,29 @@ public class ControleCliente {
             cadcliente.add(telefone);
             telefone.setVisible(true);
         }
-        // Falta data, sexo e estado civil
+        if ("dia".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroCliente dia = new CadastroCliente();
+            cadcliente.add(dia);
+            dia.setVisible(true);
+        }if ("mes".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroCliente mes = new CadastroCliente();
+            cadcliente.add(mes);
+            mes.setVisible(true);
+        }if ("ano".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroCliente ano = new CadastroCliente();
+            cadcliente.add(ano);
+            ano.setVisible(true);
+        }
+        if ("sexo".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroCliente sexo = new CadastroCliente();
+            cadcliente.add(sexo);
+            sexo.setVisible(true);
+        }if ("estadoCivil".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroCliente estadocivil = new CadastroCliente();
+            cadcliente.add(estadocivil);
+            estadocivil.setVisible(true);
+        }
     }
-    
 }
 
 

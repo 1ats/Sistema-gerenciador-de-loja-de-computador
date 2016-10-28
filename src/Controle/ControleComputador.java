@@ -15,7 +15,7 @@ public class ControleComputador {
 
     private CadastroComputadores cadcomputador;
 
-    public ControleComputador(CadastroComputadores frame1) {
+    public ControleComputador(CadastroComputadores cadcomputador) {
         this.cadcomputador = cadcomputador;
     }
 

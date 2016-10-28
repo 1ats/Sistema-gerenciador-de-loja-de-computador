@@ -15,7 +15,7 @@ public class ControleMensagem {
     
     private SACMensagem  smensagem;
     
-    public  ControleMensagem(SACMensagem frame1) {
+    public  ControleMensagem(SACMensagem smensagem) {
         this.smensagem = smensagem;
     }
     

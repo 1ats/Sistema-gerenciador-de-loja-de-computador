@@ -17,7 +17,7 @@ public class ControleConsultarVenda {
     public static JDesktopPane jdprincipal;
     private ConsultarVenda cvenda;
     
-    public  ControleConsultarVenda(ConsultarVenda frame1) {
+    public  ControleConsultarVenda(ConsultarVenda cvenda) {
         this.cvenda = cvenda;
     }
     
