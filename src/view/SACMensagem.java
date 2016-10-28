@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view;
 
 /**
@@ -10,6 +6,16 @@ package view;
  * @author aminathamiguel
  */
 public class SACMensagem extends javax.swing.JInternalFrame {
+    
+    private static SACMensagem sacmensagem;
+
+    public static SACMensagem getInstancia() {
+        if (sacmensagem == null) {
+            sacmensagem = new SACMensagem();
+
+        }
+        return sacmensagem;
+    }
 
     /**
      * Creates new form SACMensagem

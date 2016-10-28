@@ -11,6 +11,16 @@ package view;
  */
 public class CadastroVendedor extends javax.swing.JInternalFrame {
 
+    private static CadastroVendedor cadastrovendedor;
+
+    public static CadastroVendedor getInstancia() {
+        if (cadastrovendedor == null) {
+            cadastrovendedor = new CadastroVendedor();
+
+        }
+        return cadastrovendedor;
+    }
+
     /**
      * Creates new form CadastroVendedor
      */

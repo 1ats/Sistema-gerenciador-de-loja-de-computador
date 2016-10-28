@@ -1,13 +1,20 @@
 package view;
 
+import Controle.ControleAdministrador;
+import Controle.ControleCliente;
+import Controle.ControleComputador;
 import controle.Principal;
 import java.awt.Color;
+
+
 
 /**
  *
  * @author aminathamiguel
  */
 public class TelaPrincipal extends javax.swing.JFrame {
+    
+    ControleAdministrador cadadmin;
 
     /**
      * Creates new form NossaTelaPrincipal
@@ -16,6 +23,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     public TelaPrincipal() {
         initComponents();
+        this.cadadmin = new ControleAdministrador(jdprincipal);
         getContentPane().setBackground(Color.WHITE);  //YELLOW
     }
 
@@ -269,9 +277,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
         // TODO add your handling code here:
-        CadastroCliente cadcli = new CadastroCliente();
-        jdprincipal.add(cadcli);
-        cadcli.setVisible(true);
+         cadcliente.CadastroCl(CadastroCliente.getInstancia());
     }//GEN-LAST:event_jMenuItemClienteActionPerformed
 
     private void jMenuItemConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsultarActionPerformed
@@ -288,9 +294,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemComputadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemComputadoresActionPerformed
         // TODO add your handling code here:
-        CadastroComputadores cadcomp = new CadastroComputadores();
-        jdprincipal.add(cadcomp);
-        cadcomp.setVisible(true);
+        cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
     }//GEN-LAST:event_jMenuItemComputadoresActionPerformed
 
     private void jMenuItemRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRealizarActionPerformed
@@ -302,30 +306,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
         // TODO add your handling code here:
-        SACMensagem sacmen = new SACMensagem();
-        jdprincipal.add(sacmen);
-        sacmen.setVisible(true);
+        smensagem.SACMens(SACMensagem.getInstancia());
     }//GEN-LAST:event_jMenuItemMensagensActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        CadastroAdministrador cadadm = new CadastroAdministrador();
-        jdprincipal.add(cadadm);
-        cadadm.setVisible(true);
+        cadadmin.CadastroAdm(CadastroAdministrador.getInstancia());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        CadastroVendedor cadvend = new CadastroVendedor();
-        jdprincipal.add(cadvend);
-        cadvend.setVisible(true);
+        cadvendedor.CadastroVended(CadastroVendedor.getInstancia());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
         // TODO add your handling code here:
-        Sobre s = new Sobre();
-        jdprincipal.add(s);
-        s.setVisible(true);
+        sobreinfo.SobreProgram(Sobre.getInstancia());
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     private void finalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarProgramaActionPerformed

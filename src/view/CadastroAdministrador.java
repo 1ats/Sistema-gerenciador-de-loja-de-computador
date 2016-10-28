@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 /**
@@ -10,6 +5,16 @@ package view;
  * @author aminathamiguel
  */
 public class CadastroAdministrador extends javax.swing.JInternalFrame {
+
+    private static CadastroAdministrador cadastroadministrador;
+
+    public static CadastroAdministrador getInstancia() {
+        if (cadastroadministrador == null) {
+            cadastroadministrador = new CadastroAdministrador();
+
+        }
+        return cadastroadministrador;
+    }
 
     /**
      * Creates new form CadastroAdministrador

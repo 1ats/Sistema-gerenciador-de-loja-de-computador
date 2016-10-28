@@ -11,6 +11,16 @@ package view;
  */
 public class Sobre extends javax.swing.JInternalFrame {
 
+    private static Sobre sobre;
+
+    public static Sobre getInstancia() {
+        if (sobre == null) {
+            sobre = new Sobre();
+
+        }
+        return sobre;
+    }
+
     /**
      * Creates new form Sobre
      */
