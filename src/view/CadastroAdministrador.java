@@ -22,11 +22,11 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
     public CadastroAdministrador() {
         initComponents();
         
-        String itemSelecionaDia = (String)dia.getSelectedItem();
-        String itemSelecionaMes = (String)mes.getSelectedItem();
-        String itemSelecionaAno = (String)ano.getSelectedItem();
-        String itemSelecionaSexo = (String)sexo.getSelectedItem();
-        String itemSelecionaEstadoCivil = (String)estadoCivil.getSelectedItem();
+        //String itemSelecionaDia = (String)dia.getSelectedItem();
+        //String itemSelecionaMes = (String)mes.getSelectedItem();
+        //String itemSelecionaAno = (String)ano.getSelectedItem();
+        //String itemSelecionaSexo = (String)sexo.getSelectedItem();
+        //String itemSelecionaEstadoCivil = (String)estadoCivil.getSelectedItem();
         
     }
 
