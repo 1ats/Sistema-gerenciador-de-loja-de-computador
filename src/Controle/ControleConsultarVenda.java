@@ -1,7 +1,7 @@
-
 package Controle;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.CadastroCliente;
@@ -12,17 +12,17 @@ import view.Venda;
  *
  * @author aminathamiguel
  */
-public class ControleConsultarVenda {
-    
+public class ControleConsultarVenda implements ActionListener {
+
     public static JDesktopPane jdprincipal;
     private ConsultarVenda cvenda;
-    
-    public  ControleConsultarVenda(ConsultarVenda frame1) {
+
+    public ControleConsultarVenda(ConsultarVenda cvenda) {
         this.cvenda = cvenda;
     }
-    
-    public  ControleConsultarVenda(JDesktopPane jdprincial) {
-        ControleConsultarVenda.jdprincipal = jdprincial;
+
+    public ControleConsultarVenda(JDesktopPane jdprincial) {
+        this.jdprincipal = jdprincial;
     }
 
     public void CadastroConsulVend(JInternalFrame jInternalFrame) {
@@ -35,17 +35,17 @@ public class ControleConsultarVenda {
             jInternalFrame.setVisible(true);
         }
     }
- 
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         if ("clienteCodigo".equalsIgnoreCase(e.getActionCommand())) {
             Venda clicod = new Venda();
             cvenda.add(clicod);
             clicod.setVisible(true);
-        }
-        else{
+        } else {
             Venda prod = new Venda();
             cvenda.add(prod);
-            prod.setVisible(true);  
+            prod.setVisible(true);
         }
     }
 }

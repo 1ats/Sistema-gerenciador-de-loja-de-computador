@@ -1,7 +1,7 @@
-
 package Controle;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.SACMensagem;
@@ -10,17 +10,18 @@ import view.SACMensagem;
  *
  * @author aminathamiguel
  */
-public class ControleMensagem {
+public class ControleMensagem implements ActionListener {
+
     public static JDesktopPane jdprincipal;
-    
-    private SACMensagem  smensagem;
-    
-    public  ControleMensagem(SACMensagem frame1) {
+
+    private SACMensagem smensagem;
+
+    public ControleMensagem(SACMensagem smensagem) {
         this.smensagem = smensagem;
     }
-    
-    public  ControleMensagem(JDesktopPane jdprincial) {
-        ControleMensagem.jdprincipal = jdprincial;
+
+    public ControleMensagem(JDesktopPane jdprincial) {
+        this.jdprincipal = jdprincial;
     }
 
     public void SACMens(JInternalFrame jInternalFrame) {
@@ -33,17 +34,17 @@ public class ControleMensagem {
             jInternalFrame.setVisible(true);
         }
     }
-    
-public void actionPerformed(ActionEvent e) {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
         if ("cliente".equalsIgnoreCase(e.getActionCommand())) {
             SACMensagem cliente = new SACMensagem();
             smensagem.add(cliente);
             cliente.setVisible(true);
-        }
-        else{
+        } else {
             SACMensagem mensagem = new SACMensagem();
             smensagem.add(mensagem);
             mensagem.setVisible(true);
         }
-    }    
+    }
 }

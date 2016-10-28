@@ -11,12 +11,12 @@ public class ControleAdministrador implements ActionListener {
     public static JDesktopPane jdprincipal;
     private CadastroAdministrador cadadmin;
 
-    public ControleAdministrador(CadastroAdministrador frame1) {
+    public ControleAdministrador(CadastroAdministrador cadadmin) {
         this.cadadmin = cadadmin;
     }
 
     public ControleAdministrador(JDesktopPane jdprincial) {
-        ControleAdministrador.jdprincipal = jdprincial;
+        this.jdprincipal = jdprincial;
     }
 
     public void CadastroAdm(JInternalFrame jInternalFrame) {

@@ -34,7 +34,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     public TelaPrincipal() {
         initComponents();
-        this.cadadmin = new ControleAdministrador(jdprincipal);
+        cadadmin = new ControleAdministrador(jdprincipal);
+        cadcliente = new ControleCliente(jdprincipal);
+        cadcomputador = new ControleComputador(jdprincipal);
+        cadvendedor = new ControleVendedor(jdprincipal);
+        cvenda = new ControleConsultarVenda(jdprincipal);
+        venda = new ControleVenda(jdprincipal);
+        sobreinfo = new ControleSobre(jdprincipal);
+        smensagem = new ControleMensagem(jdprincipal);
+        
         getContentPane().setBackground(Color.WHITE);  //YELLOW
     }
 
@@ -308,7 +316,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRealizarActionPerformed
         // TODO add your handling code here:
-        //venda.Vendas(Venda.getInstancia());
+        venda.Vendas(Venda.getInstancia());
     }//GEN-LAST:event_jMenuItemRealizarActionPerformed
 
     private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
@@ -343,7 +351,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void realizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarVendaActionPerformed
         // TODO add your handling code here:
-        //venda.Vendas(Venda.getInstancia());
+        venda.Vendas(Venda.getInstancia());
     }//GEN-LAST:event_realizarVendaActionPerformed
 
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed

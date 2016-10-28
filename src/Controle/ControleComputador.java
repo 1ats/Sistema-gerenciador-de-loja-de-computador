@@ -1,6 +1,7 @@
 package Controle;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.CadastroComputadores;
@@ -9,18 +10,18 @@ import view.CadastroComputadores;
  *
  * @author aminathamiguel
  */
-public class ControleComputador {
+public class ControleComputador implements ActionListener {
 
     public static JDesktopPane jdprincipal;
 
     private CadastroComputadores cadcomputador;
 
-    public ControleComputador(CadastroComputadores frame1) {
+    public ControleComputador(CadastroComputadores cadcomputador) {
         this.cadcomputador = cadcomputador;
     }
 
     public ControleComputador(JDesktopPane jdprincial) {
-        ControleCliente.jdprincipal = jdprincial;
+        this.jdprincipal = jdprincial;
     }
 
     public void CadastroComp(JInternalFrame jInternalFrame) {
@@ -34,22 +35,24 @@ public class ControleComputador {
         }
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if ("marca".equalsIgnoreCase(e.getActionCommand())) {
             CadastroComputadores marca = new CadastroComputadores();
             cadcomputador.add(marca);
             marca.setVisible(true);
         }
-        if ("cor".equalsIgnoreCase(e.getActionCommand())){
+        if ("cor".equalsIgnoreCase(e.getActionCommand())) {
             CadastroComputadores cor = new CadastroComputadores();
             cadcomputador.add(cor);
-            cor.setVisible(true);  
+            cor.setVisible(true);
         }
-        if ("modelo".equalsIgnoreCase(e.getActionCommand())){
+        if ("modelo".equalsIgnoreCase(e.getActionCommand())) {
             CadastroComputadores modelo = new CadastroComputadores();
             cadcomputador.add(modelo);
-            modelo.setVisible(true);  
-        }if ("velocidade".equalsIgnoreCase(e.getActionCommand())) {
+            modelo.setVisible(true);
+        }
+        if ("velocidade".equalsIgnoreCase(e.getActionCommand())) {
             CadastroComputadores velocidade = new CadastroComputadores();
             cadcomputador.add(velocidade);
             velocidade.setVisible(true);
@@ -76,5 +79,3 @@ public class ControleComputador {
         }
     }
 }
-
-

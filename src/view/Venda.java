@@ -13,6 +13,16 @@ import java.awt.event.ItemListener;
  */
 public class Venda extends javax.swing.JInternalFrame {
 
+    private static Venda vend;
+
+    public static Venda getInstancia() {
+        if (vend == null) {
+            vend = new Venda();
+
+        }
+        return vend;
+    }
+
     /**
      * Creates new form Venda
      */
@@ -214,9 +224,9 @@ public class Venda extends javax.swing.JInternalFrame {
     private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
         // TODO add your handling code here:
         clienteCodigo.setText("");
-     // modoPagamento.addItemListener((ItemListener) modoPagamento);
-        
-        
+        // modoPagamento.addItemListener((ItemListener) modoPagamento);
+
+
     }//GEN-LAST:event_excluirActionPerformed
 
     private void produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoActionPerformed

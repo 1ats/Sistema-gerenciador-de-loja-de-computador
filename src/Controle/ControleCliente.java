@@ -1,8 +1,8 @@
 
 package Controle;
 
-import static Controle.ControleAdministrador.jdprincipal;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.CadastroCliente;
@@ -11,18 +11,18 @@ import view.CadastroCliente;
  *
  * @author aminathamiguel
  */
-public class ControleCliente {
+public class ControleCliente implements ActionListener{
 
     public static JDesktopPane jdprincipal;
 
     private CadastroCliente cadcliente;
 
-    public ControleCliente(CadastroCliente frame1) {
+    public ControleCliente(CadastroCliente cadcliente) {
         this.cadcliente = cadcliente;
     }
 
     public ControleCliente(JDesktopPane jdprincial) {
-        ControleCliente.jdprincipal = jdprincial;
+        this.jdprincipal = jdprincial;
     }
 
     public void CadastroCl(JInternalFrame jInternalFrame) {
@@ -38,6 +38,7 @@ public class ControleCliente {
     
     
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if ("nome".equalsIgnoreCase(e.getActionCommand())) {
             CadastroCliente nome = new CadastroCliente();
@@ -47,12 +48,12 @@ public class ControleCliente {
         if ("cpf".equalsIgnoreCase(e.getActionCommand())){
             CadastroCliente cpf = new CadastroCliente();
             cadcliente.add(cpf);
-            cpf.setVisible(true);  
+            cpf.setVisible(true);
         }
         if ("rg".equalsIgnoreCase(e.getActionCommand())){
             CadastroCliente rg = new CadastroCliente();
             cadcliente.add(rg);
-            rg.setVisible(true);  
+            rg.setVisible(true);
         }if ("telefone".equalsIgnoreCase(e.getActionCommand())) {
             CadastroCliente telefone = new CadastroCliente();
             cadcliente.add(telefone);
@@ -60,7 +61,7 @@ public class ControleCliente {
         }
         // Falta data, sexo e estado civil
     }
-    
+
 }
 
 

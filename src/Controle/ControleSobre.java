@@ -1,5 +1,7 @@
 package Controle;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import view.SACMensagem;
@@ -9,18 +11,18 @@ import view.Sobre;
  *
  * @author aminathamiguel
  */
-public class ControleSobre {
+public class ControleSobre implements ActionListener {
 
     public static JDesktopPane jdprincipal;
 
     private Sobre sobreinfo;
 
-    public ControleSobre(SACMensagem frame1) {
+    public ControleSobre(SACMensagem sobreinfo1) {
         this.sobreinfo = sobreinfo;
     }
 
     public ControleSobre(JDesktopPane jdprincial) {
-        ControleSobre.jdprincipal = jdprincial;
+        this.jdprincipal = jdprincial;
     }
 
     public void SobreProgram(JInternalFrame jInternalFrame) {
@@ -34,4 +36,13 @@ public class ControleSobre {
         }
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if ("sobre".equalsIgnoreCase(e.getActionCommand())) {
+            Sobre s = new Sobre();
+            s.setVisible(true);
+
+        }
+
+    }
 }
