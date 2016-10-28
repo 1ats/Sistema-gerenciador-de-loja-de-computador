@@ -37,9 +37,36 @@ public class ControleAdministrador implements ActionListener {
             CadastroAdministrador usuario = new CadastroAdministrador();
             cadadmin.add(usuario);
             usuario.setVisible(true);
-
         }
-
+        if ("senha".equalsIgnoreCase(e.getActionCommand())){
+            CadastroAdministrador senha = new CadastroAdministrador();
+            cadadmin.add(senha);
+            senha.setVisible(true);  
+        }
+        if ("confirmarSenha".equalsIgnoreCase(e.getActionCommand())){
+            CadastroAdministrador confirmasenha = new CadastroAdministrador();
+            cadadmin.add(confirmasenha);
+            confirmasenha.setVisible(true);  
+        }
+        if ("nome".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador nome = new CadastroAdministrador();
+            cadadmin.add(nome);
+            nome.setVisible(true);
+        }
+        if ("cpf".equalsIgnoreCase(e.getActionCommand())){
+            CadastroAdministrador cpf = new CadastroAdministrador();
+            cadadmin.add(cpf);
+            cpf.setVisible(true);  
+        }
+        if ("rg".equalsIgnoreCase(e.getActionCommand())){
+            CadastroAdministrador rg = new CadastroAdministrador();
+            cadadmin.add(rg);
+            rg.setVisible(true);  
+        }if ("telefone".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador telefone = new CadastroAdministrador();
+            cadadmin.add(telefone);
+            telefone.setVisible(true);
+        }
+        // Falta data, sexo e estado civil
     }
-
 }

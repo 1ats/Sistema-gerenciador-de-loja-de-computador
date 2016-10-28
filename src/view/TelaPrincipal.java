@@ -3,6 +3,11 @@ package view;
 import Controle.ControleAdministrador;
 import Controle.ControleCliente;
 import Controle.ControleComputador;
+import Controle.ControleConsultarVenda;
+import Controle.ControleMensagem;
+import Controle.ControleSobre;
+import Controle.ControleVenda;
+import Controle.ControleVendedor;
 import controle.Principal;
 import java.awt.Color;
 
@@ -15,7 +20,13 @@ import java.awt.Color;
 public class TelaPrincipal extends javax.swing.JFrame {
     
     ControleAdministrador cadadmin;
-
+    ControleCliente cadcliente;
+    ControleConsultarVenda cvenda;
+    ControleComputador cadcomputador;
+    ControleVenda venda;
+    ControleMensagem smensagem;
+    ControleVendedor cadvendedor;
+    ControleSobre sobreinfo;
     /**
      * Creates new form NossaTelaPrincipal
      */
@@ -297,7 +308,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRealizarActionPerformed
         // TODO add your handling code here:
-        venda.Vendas(Venda.getInstancia());
+        //venda.Vendas(Venda.getInstancia());
     }//GEN-LAST:event_jMenuItemRealizarActionPerformed
 
     private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
@@ -332,7 +343,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void realizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarVendaActionPerformed
         // TODO add your handling code here:
-        venda.Vendas(Venda.getInstancia());
+        //venda.Vendas(Venda.getInstancia());
     }//GEN-LAST:event_realizarVendaActionPerformed
 
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
