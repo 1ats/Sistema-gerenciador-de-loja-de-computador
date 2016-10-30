@@ -1,0 +1,3 @@
+Mon Oct 31 00:42:54 WAT 2016 : frame1.usuario.getText()
+Mon Oct 31 00:43:53 WAT 2016 : tuti
+Mon Oct 31 00:46:02 WAT 2016 : tuti
