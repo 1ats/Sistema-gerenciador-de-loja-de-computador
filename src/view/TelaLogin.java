@@ -52,13 +52,13 @@ public class TelaLogin extends javax.swing.JFrame {
         Usuario.setForeground(new java.awt.Color(255, 255, 255));
         Usuario.setText("Usuário:");
         getContentPane().add(Usuario);
-        Usuario.setBounds(60, 40, 67, 20);
+        Usuario.setBounds(50, 30, 66, 21);
 
         Senha.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         Senha.setForeground(new java.awt.Color(255, 255, 255));
         Senha.setText("Senha:");
         getContentPane().add(Senha);
-        Senha.setBounds(60, 80, 53, 20);
+        Senha.setBounds(60, 80, 55, 21);
 
         usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +75,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(acessar);
-        acessar.setBounds(200, 130, 110, 29);
+        acessar.setBounds(200, 130, 110, 23);
 
         senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
