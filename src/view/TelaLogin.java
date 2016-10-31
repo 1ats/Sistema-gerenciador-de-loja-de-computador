@@ -5,8 +5,9 @@
  */
 package view;
 
-import java.awt.event.ActionListener;
+import ArquivoLog.Arquivo;
 import controle.LoginC;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -96,6 +97,11 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if (usuario.getText().equals("tuti") && senha.getText().equals("1234")) {
+             try {
+            Arquivo.escrever("tuti", "log.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
             JOptionPane.showMessageDialog(null, "Bem Vindo");
             TelaPrincipal tela = new TelaPrincipal();
             tela.setVisible(true);

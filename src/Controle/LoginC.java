@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import view.TelaLogin;
 import view.TelaPrincipal;
-import ArquivoLog.LogArquivo;
+
 
 
 public class LoginC implements ActionListener {
@@ -29,7 +29,6 @@ public class LoginC implements ActionListener {
 
             if ("adm".equals(frame1.usuario.getText()) && "1234".equals(frame1.senha.getText()) || "tuti".equals(frame1.usuario.getText()) && "1234".equals(frame1.senha.getText())) {
                 JOptionPane.showMessageDialog(null, "Bem Vindo");
-                new LogArquivo("adms");
                 TelaPrincipal tela = new TelaPrincipal();
                 tela.setVisible(true);
                 frame1.usuario.add(frame1.usuario);
@@ -38,14 +37,5 @@ public class LoginC implements ActionListener {
             }
         }
     }
-
-    
-
-        public void arquivar() {
-            new LogArquivo("adms");
-            new LogArquivo("1234");
-        }
-        
-    
 }
 
