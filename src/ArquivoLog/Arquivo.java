@@ -5,7 +5,9 @@
  */
 package ArquivoLog;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -22,4 +24,17 @@ public class Arquivo {
         bufferedWriter.close();
     }
     
+    public static String ler(String mensagem) throws IOException {
+         FileReader fileReader = new FileReader(mensagem);
+         BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+         String linha = "";
+         while (bufferedReader.ready()) {
+             linha += bufferedReader.readLine();
+             //System.out.println(linha);
+         }
+
+         bufferedReader.close();
+         return linha;
+     }
 }

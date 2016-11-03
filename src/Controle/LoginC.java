@@ -15,6 +15,7 @@ public class LoginC implements ActionListener {
 
     public LoginC(TelaLogin frame1) {
         this.frame1 = frame1;
+        
     }
 
     @Override

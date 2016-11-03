@@ -8,6 +8,8 @@ package view;
 import ArquivoLog.Arquivo;
 import controle.LoginC;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,14 +17,30 @@ import javax.swing.JOptionPane;
  * @author aminathamiguel
  */
 public class TelaLogin extends javax.swing.JFrame {
-
-    /**
-     * Creates new form TelaLogin1
-     */
+        
+  // Arquivo arq=new Arquivo();
     private LoginC listener = new LoginC(this);
 
-    public TelaLogin() {
+    public TelaLogin() throws IOException {
         initComponents();
+        try {
+      String dado= Arquivo.ler("C:\\Users\\HP\\Documents\\NetBeansProjects\\GerenciamentoLoja\\log.txt");
+      int k = dado.length();
+             int j = 0;
+
+             for (int i = 0; i < dado.length(); i++) {
+                 char c = dado.charAt(i);
+                 String p = Character.toString(c);
+                 if (p.equals(":")) {
+                     j = i;
+                 }
+             }
+
+             usuario.setText(dado.substring(j + 2, k)); 
+        }catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Arquivo não encontrado");
+           
+        }
     }
 
     /**
@@ -95,12 +113,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void acessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarActionPerformed
         // TODO add your handling code here:
-
         if (usuario.getText().equals("tuti") && senha.getText().equals("1234")) {
              try {
             Arquivo.escrever("tuti", "log.txt");
         } catch (IOException e) {
             e.printStackTrace();
+           
         }
             JOptionPane.showMessageDialog(null, "Bem Vindo");
             TelaPrincipal tela = new TelaPrincipal();
@@ -147,11 +165,15 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+    
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                try {
+                    new TelaLogin().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
