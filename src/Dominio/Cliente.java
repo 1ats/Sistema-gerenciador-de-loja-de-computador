@@ -5,7 +5,7 @@
  */
 package Dominio;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -94,7 +94,5 @@ public class Cliente {
 
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
-    }
-   
-    
+    }  
 }

@@ -29,8 +29,8 @@ connect.close();
 }
 catch (SQLException e){
     JOptionPane.showMessageDialog(null, "Erro ao fechar conexão" +e.getMessage());
-}
-}
+  }
+ }
 }
 
 
