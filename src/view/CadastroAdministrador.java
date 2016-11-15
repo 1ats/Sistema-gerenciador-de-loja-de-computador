@@ -1,5 +1,7 @@
 package view;
 
+import Controle.ControleAdministrador;
+
 /**
  *
  * @author aminathamiguel
@@ -7,6 +9,7 @@ package view;
 public class CadastroAdministrador extends javax.swing.JInternalFrame {
 
     private static CadastroAdministrador cadastroadministrador;
+    private ControleAdministrador listener = new ControleAdministrador(this);
 
     public static CadastroAdministrador getInstancia() {
         if (cadastroadministrador == null) {
@@ -101,11 +104,15 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         });
 
         excluir.setText("Excluir");
+        excluir.setActionCommand("excluir");
+        /*
         excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirActionPerformed(evt);
             }
         });
+        */
+        excluir.addActionListener(listener);
 
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {

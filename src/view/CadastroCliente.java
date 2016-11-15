@@ -1,5 +1,7 @@
 package view;
 
+import Controle.ControleCliente;
+
 /**
  *
  * @author aminathamiguel
@@ -7,7 +9,8 @@ package view;
 public class CadastroCliente extends javax.swing.JInternalFrame {
 
     private static CadastroCliente cadastrocliente;
-
+    private ControleCliente listener = new ControleCliente(this);
+    
     public static CadastroCliente getInstancia() {
         if (cadastrocliente == null) {
             cadastrocliente = new CadastroCliente();
@@ -81,11 +84,15 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         });
 
         excluir.setText("Excluir");
+        excluir.setActionCommand("excluir");
+        /*
         excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirActionPerformed(evt);
             }
         });
+        */
+        excluir.addActionListener(listener);
 
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {

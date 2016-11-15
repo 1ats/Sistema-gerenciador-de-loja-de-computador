@@ -1,5 +1,7 @@
 package view;
 
+import Controle.ControleComputador;
+
 /**
  *
  * @author aminathamiguel
@@ -7,7 +9,8 @@ package view;
 public class CadastroComputadores extends javax.swing.JInternalFrame {
 
     private static CadastroComputadores cadastrocomputadores;
-
+    private ControleComputador listener = new ControleComputador(this);
+    
     public static CadastroComputadores getInstancia() {
         if (cadastrocomputadores == null) {
             cadastrocomputadores = new CadastroComputadores();
@@ -131,11 +134,15 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
         });
 
         excluir.setText("Excluir");
+        excluir.setActionCommand("excluir");
+        /*
         excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirActionPerformed(evt);
             }
         });
+        */
+        excluir.addActionListener(listener);
 
         cadastrar.setText("Cadastrar");
         cadastrar.addActionListener(new java.awt.event.ActionListener() {

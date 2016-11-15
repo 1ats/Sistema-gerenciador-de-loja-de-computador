@@ -5,6 +5,7 @@
  */
 package view;
 
+import Controle.ControleVenda;
 import java.awt.event.ItemListener;
 
 /**
@@ -14,7 +15,8 @@ import java.awt.event.ItemListener;
 public class Venda extends javax.swing.JInternalFrame {
 
     private static Venda vend;
-
+    private ControleVenda listener = new ControleVenda(this);
+    
     public static Venda getInstancia() {
         if (vend == null) {
             vend = new Venda();
@@ -99,11 +101,15 @@ public class Venda extends javax.swing.JInternalFrame {
         });
 
         excluir.setText("Excluir");
+        excluir.setActionCommand("excluir");
+        /*
         excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirActionPerformed(evt);
             }
         });
+        */
+        excluir.addActionListener(listener);
 
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {

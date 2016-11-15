@@ -5,6 +5,8 @@
  */
 package view;
 
+import Controle.ControleVendedor;
+
 /**
  *
  * @author aminathamiguel
@@ -12,7 +14,8 @@ package view;
 public class CadastroVendedor extends javax.swing.JInternalFrame {
 
     private static CadastroVendedor cadastrovendedor;
-
+    private ControleVendedor listener = new ControleVendedor(this);
+    
     public static CadastroVendedor getInstancia() {
         if (cadastrovendedor == null) {
             cadastrovendedor = new CadastroVendedor();
@@ -98,11 +101,15 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
         });
 
         excluir.setText("Excluir");
+        excluir.setActionCommand("excluir");
+        /*
         excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirActionPerformed(evt);
             }
         });
+        */
+        excluir.addActionListener(listener);
 
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
