@@ -273,4 +273,8 @@ public class Venda extends javax.swing.JInternalFrame {
     private javax.swing.JButton pesquisarCliente;
     private javax.swing.JTextField produto;
     // End of variables declaration//GEN-END:variables
+public void limpar(){
+        clienteCodigo.setText("");
+        produto.setText("");
+    }
 }

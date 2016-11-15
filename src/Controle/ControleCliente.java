@@ -40,48 +40,14 @@ public class ControleCliente implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ("nome".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente nome = new CadastroCliente();
-            cadcliente.add(nome);
-            nome.setVisible(true);
+       if("excluir".equals(e.getActionCommand())){  //limpa
+            cadcliente.limpar();
         }
-        if ("cpf".equalsIgnoreCase(e.getActionCommand())){
-            CadastroCliente cpf = new CadastroCliente();
-            cadcliente.add(cpf);
-            cpf.setVisible(true);
+        if("cancelar".equals(e.getActionCommand())){
+            cadcliente.dispose();
         }
-        if ("rg".equalsIgnoreCase(e.getActionCommand())){
-            CadastroCliente rg = new CadastroCliente();
-            cadcliente.add(rg);
-            rg.setVisible(true);
-        }if ("telefone".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente telefone = new CadastroCliente();
-            cadcliente.add(telefone);
-            telefone.setVisible(true);
+        // excluir excluir um cadastro 
         }
-        if ("dia".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente dia = new CadastroCliente();
-            cadcliente.add(dia);
-            dia.setVisible(true);
-        }if ("mes".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente mes = new CadastroCliente();
-            cadcliente.add(mes);
-            mes.setVisible(true);
-        }if ("ano".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente ano = new CadastroCliente();
-            cadcliente.add(ano);
-            ano.setVisible(true);
-        }
-        if ("sexo".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente sexo = new CadastroCliente();
-            cadcliente.add(sexo);
-            sexo.setVisible(true);
-        }if ("estadoCivil".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente estadocivil = new CadastroCliente();
-            cadcliente.add(estadocivil);
-            estadocivil.setVisible(true);
-        }
-    }
 }
 
 

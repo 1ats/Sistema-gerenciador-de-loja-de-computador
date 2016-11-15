@@ -247,14 +247,14 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
                                             .addComponent(sexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(dia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(33, 33, 33)
-                                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel10)))
+                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                                 .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroAdministradorLayout.createSequentialGroup()
-                                .addGap(232, 232, 232)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(estadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
@@ -417,4 +417,17 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
     private javax.swing.JTextField telefone;
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
+public void limpar(){
+        usuario.setText("");
+        senha.setText("");
+        confirmarSenha.setText("");
+        nome.setText("");
+        cpf.setText("");
+        rg.setText("");
+        telefone.setText("");
+        dia.setActionCommand("1");
+        mes.setActionCommand("Janeiro");
+        ano.setActionCommand("1900");
+        sexo.setActionCommand("Masculino");
+    }
 }

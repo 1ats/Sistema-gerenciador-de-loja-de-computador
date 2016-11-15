@@ -210,7 +210,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1Nome9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -333,4 +333,14 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> sexo;
     private javax.swing.JTextField telefone;
     // End of variables declaration//GEN-END:variables
+public void limpar(){
+        nome.setText("");
+        cpf.setText("");
+        rg.setText("");
+        telefone.setText("");
+        dia.setActionCommand("1");
+        mes.setActionCommand("Janeiro");
+        ano.setActionCommand("1900");
+        sexo.setActionCommand("Masculino");
+    }
 }

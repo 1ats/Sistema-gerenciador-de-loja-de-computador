@@ -237,9 +237,9 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
                             .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
                                     .addComponent(sexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(29, 29, 29)
+                                    .addGap(56, 56, 56)
                                     .addComponent(jLabel10)
-                                    .addGap(37, 37, 37)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(estadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
                                     .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,7 +276,7 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
                 .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(rg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -404,4 +404,17 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField telefone;
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
+public void limpar(){
+        usuario.setText("");
+        senha.setText("");
+        confirmarSenha.setText("");
+        nome.setText("");
+        cpf.setText("");
+        rg.setText("");
+        telefone.setText("");
+        dia.setActionCommand("1");
+        mes.setActionCommand("Janeiro");
+        ano.setActionCommand("1900");
+        sexo.setActionCommand("Masculino");
+    }
 }

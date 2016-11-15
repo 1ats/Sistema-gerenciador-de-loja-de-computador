@@ -13,7 +13,6 @@ import view.Venda;
 public class ControleVenda implements ActionListener {
 
     public static JDesktopPane jdprincipal;
-
     private Venda venda;
 
     public ControleVenda(Venda venda) {
@@ -37,20 +36,12 @@ public class ControleVenda implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ("clienteCodigo".equalsIgnoreCase(e.getActionCommand())) {
-            Venda clicod = new Venda();
-            venda.add(clicod);
-            clicod.setVisible(true);
+       if("excluir".equals(e.getActionCommand())){  //limpa
+            venda.limpar();
         }
-        if ("modoPagamento".equalsIgnoreCase(e.getActionCommand())){
-            Venda modpag = new Venda();
-            venda.add(modpag);
-            modpag.setVisible(true);
+        if("cancelar".equals(e.getActionCommand())){
+            venda.dispose();
         }
-        else{
-            Venda prod = new Venda();
-            venda.add(prod);
-            prod.setVisible(true);
+        // excluir excluir um cadastro 
         }
-    }
 }

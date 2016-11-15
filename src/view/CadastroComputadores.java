@@ -315,4 +315,14 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
     private javax.swing.JTextField sistemaOperacional;
     private javax.swing.JTextField velocidade;
     // End of variables declaration//GEN-END:variables
+public void limpar(){
+        marca.setText("");
+        cor.setText("");
+        modelo.setText("");
+        velocidade.setText("");
+        sistemaOperacional.setText("");
+        cache.setText("");
+        memoria.setText("");
+        garantiaFornecedor.setText("");
+        }
 }

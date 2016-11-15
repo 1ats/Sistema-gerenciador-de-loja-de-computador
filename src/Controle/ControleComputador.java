@@ -37,45 +37,12 @@ public class ControleComputador implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ("marca".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores marca = new CadastroComputadores();
-            cadcomputador.add(marca);
-            marca.setVisible(true);
+       if("excluir".equals(e.getActionCommand())){  //limpa
+            cadcomputador.limpar();
         }
-        if ("cor".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores cor = new CadastroComputadores();
-            cadcomputador.add(cor);
-            cor.setVisible(true);
+        if("cancelar".equals(e.getActionCommand())){
+            cadcomputador.dispose();
         }
-        if ("modelo".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores modelo = new CadastroComputadores();
-            cadcomputador.add(modelo);
-            modelo.setVisible(true);
+        // excluir excluir um cadastro 
         }
-        if ("velocidade".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores velocidade = new CadastroComputadores();
-            cadcomputador.add(velocidade);
-            velocidade.setVisible(true);
-        }
-        if ("sistemaOperacional".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores sistemaop = new CadastroComputadores();
-            cadcomputador.add(sistemaop);
-            sistemaop.setVisible(true);
-        }
-        if ("cache".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores cache = new CadastroComputadores();
-            cadcomputador.add(cache);
-            cache.setVisible(true);
-        }
-        if ("memoria".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores memoria = new CadastroComputadores();
-            cadcomputador.add(memoria);
-            memoria.setVisible(true);
-        }
-        if ("garantiaFornecedor".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores garantia = new CadastroComputadores();
-            cadcomputador.add(garantia);
-            garantia.setVisible(true);
-        }
-    }
 }
