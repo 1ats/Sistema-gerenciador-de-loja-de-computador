@@ -15,11 +15,11 @@ public class Funcionario {
     protected String sexo;
     protected int telefone;
     protected String estadoCivil;
-    protected String cpf;
-    protected String rg;
+    protected int cpf;
+    protected int rg;
     protected Date DataNascimento;
 
-    public Funcionario(String usuario, String senha, String confirmarSenha, String nome, String sexo, int telefone, String estadoCivil, String cpf, String rg, Date DataNascimento) {
+    public Funcionario(String usuario, String senha, String confirmarSenha, String nome, String sexo, int telefone, String estadoCivil, int cpf, int rg, Date DataNascimento) {
         this.usuario = usuario;
         this.senha = senha;
         this.confirmarSenha = confirmarSenha;
@@ -88,19 +88,19 @@ public class Funcionario {
         this.estadoCivil = estadoCivil;
     }
 
-    public String getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 
-    public String getRg() {
+    public int getRg() {
         return rg;
     }
 
-    public void setRg(String rg) {
+    public void setRg(int rg) {
         this.rg = rg;
     }
 

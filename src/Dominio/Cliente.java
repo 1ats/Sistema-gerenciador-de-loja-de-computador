@@ -12,16 +12,16 @@ import java.sql.Date;
  * @author aminathamiguel
  */
 public class Cliente {
-    private String cpf;
+    private int cpf;
     private Funcionario func;
-    private String rg;
+    private int rg;
     private String nome;
     private String sexo;
-    private String telefone;
+    private int telefone;
     private String estadoCivil;
     private Date dataNascimento;
 
-    public Cliente(String cpf, Funcionario func, String rg, String nome, String sexo, String telefone, String estadoCivil, Date dataNascimento) {
+    public Cliente(int cpf, Funcionario func, int rg, String nome, String sexo, int telefone, String estadoCivil, Date dataNascimento) {
         this.cpf = cpf;
         this.func = func;
         this.rg = rg;
@@ -32,11 +32,11 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 
@@ -48,11 +48,11 @@ public class Cliente {
         this.func = func;
     }
 
-    public String getRg() {
+    public int getRg() {
         return rg;
     }
 
-    public void setRg(String rg) {
+    public void setRg(int rg) {
         this.rg = rg;
     }
 
@@ -72,11 +72,11 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public String getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 

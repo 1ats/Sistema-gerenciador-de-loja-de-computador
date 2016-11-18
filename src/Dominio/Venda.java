@@ -14,9 +14,9 @@ public class Venda {
     private Cliente cli;
     private Vendedor vend;
     private int qtotal;
-    private String precoTotal;
+    private int precoTotal;
 
-    public Venda(Computadores comp, Cliente cli, Vendedor vend, int qtotal, String precoTotal) {
+    public Venda(Computadores comp, Cliente cli, Vendedor vend, int qtotal, int precoTotal) {
         this.comp = comp;
         this.cli = cli;
         this.vend = vend;
@@ -56,11 +56,11 @@ public class Venda {
         this.qtotal = qtotal;
     }
 
-    public String getPrecoTotal() {
+    public int getPrecoTotal() {
         return precoTotal;
     }
 
-    public void setPrecoTotal(String precoTotal) {
+    public void setPrecoTotal(int precoTotal) {
         this.precoTotal = precoTotal;
     }
     
