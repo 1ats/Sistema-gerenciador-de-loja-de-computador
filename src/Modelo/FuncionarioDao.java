@@ -71,7 +71,7 @@ public void delete(int rg) {
 
             conn = conex.getConnection();
             String sql = "insert into clientes (usuario,senha,confirmasenha,nome,sexo,telefone,estadoCivil,cpf,rg,dataNascimento)"
-                    + "values(?,?,?,?,?)";
+                    + "values(?,?,?,?,?,?,?,?,?)";
 
             ps = conn.prepareStatement(sql);
             ps.setString(1, funcionario.getUsuario());
