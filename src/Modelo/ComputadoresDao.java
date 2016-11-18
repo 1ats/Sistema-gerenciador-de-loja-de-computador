@@ -74,9 +74,9 @@ public class ComputadoresDao {
                     + "values(?,?,?,?,?)";
 
             ps = conn.prepareStatement(sql);
-            ps.setString(1, cliente.getCpf());
-            ps.setString(3, cliente.getRg());
-            ps.setString(4, cliente.getTelefone());
+            ps.setInt(1, cliente.getCpf());
+            ps.setInt(3, cliente.getRg());
+            ps.setInt(4, cliente.getTelefone());
             ps.setString(5, cliente.getNome());
             ps.setString(6, cliente.getSexo());
             ps.setString(7, cliente.getEstadoCivil());
@@ -134,9 +134,9 @@ public class ComputadoresDao {
             JOptionPane.showMessageDialog(null, cliente.getNome());
 
             ps = conn.prepareStatement(sql);
-            ps.setString(1, cliente.getCpf());
-            ps.setString(3, cliente.getRg());
-            ps.setString(4, cliente.getTelefone());
+            ps.setInt(1, cliente.getCpf());
+            ps.setInt(3, cliente.getRg());
+            ps.setInt(4, cliente.getTelefone());
             ps.setString(5, cliente.getNome());
             ps.setString(6, cliente.getSexo());
             ps.setString(7, cliente.getEstadoCivil());
