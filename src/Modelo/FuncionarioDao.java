@@ -70,17 +70,19 @@ public void delete(int rg) {
         try {
 
             conn = conex.getConnection();
-            String sql = "insert into clientes (cpf,func,rg,nome,sexo,telefone,estadoCivil,dataNascimento) "
+            String sql = "insert into clientes (usuario,senha,confirmasenha,nome,sexo,telefone,estadoCivil,cpf,rg,dataNascimento)"
                     + "values(?,?,?,?,?)";
 
             ps = conn.prepareStatement(sql);
-            ps.setString(1, cliente.getCpf());
-            ps.setString(3, cliente.getRg());
-            ps.setString(4, cliente.getTelefone());
-            ps.setString(5, cliente.getNome());
-            ps.setString(6, cliente.getSexo());
-            ps.setString(7, cliente.getEstadoCivil());
-            ps.setDate(8, cliente.getDataNascimento());
+            ps.setString(1, funcionario.getUsuario());
+            ps.setString(2, funcionario.getSenha());
+            ps.setString(3, funcionario.getNome());
+            ps.setString(4, funcionario.getSexo());
+            ps.setInt(5, funcionario.getTelefone());
+            ps.setString(6, funcionario.getEstadoCivil());
+            ps.setInt(7, funcionario.getCpf());
+            ps.setInt(8, funcionario.getRg());
+            ps.setDate(9, (java.sql.Date) funcionario.getDataNascimento());
             ps.execute();
             conn.commit();
 
@@ -118,7 +120,7 @@ public void delete(int rg) {
             }
         }
     }
-    public void atualizar(Cliente cliente) {
+    public void atualizar(Funcionario funcionario) {
 
         Connection conn = null;
         Conexao conex = new Conexao();
@@ -128,20 +130,21 @@ public void delete(int rg) {
 
             conn = conex.getConnection();
 
-            String sql = "update clientes set nome=?,rg=?, cpf=?, telefone=?, sexo=? estadoCivil=?, dataNascimento=? func=? where nome = " + cliente.getNome() + "";
+            String sql = "update clientes set usuario=?,senha=?, nome=?, sexo=?, telefone=? estadoCivil=?, cpf=? rg=? where nome = " + funcionario.getRg() + "";
 
-            JOptionPane.showMessageDialog(null, cliente.getNome());
+            JOptionPane.showMessageDialog(null, funcionario.getRg());
 
             ps = conn.prepareStatement(sql);
-            ps.setString(1, cliente.getCpf());
-            ps.setString(3, cliente.getRg());
-            ps.setString(4, cliente.getTelefone());
-            ps.setString(5, cliente.getNome());
-            ps.setString(6, cliente.getSexo());
-            ps.setString(7, cliente.getEstadoCivil());
-            ps.setDate(8, cliente.getDataNascimento());
+            ps.setString(1, funcionario.getUsuario());
+            ps.setString(2, funcionario.getSenha());
+            ps.setString(3, funcionario.getNome());
+            ps.setString(4, funcionario.getSexo());
+            ps.setInt(5, funcionario.getTelefone());
+            ps.setString(6, funcionario.getEstadoCivil());
+            ps.setInt(7, funcionario.getCpf());
+            ps.setInt(8, funcionario.getRg());
+            ps.setDate(9, (java.sql.Date) funcionario.getDataNascimento());
             ps.execute();
-            
             conn.commit();
 
         } catch(SQLException e) {
