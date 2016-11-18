@@ -24,7 +24,7 @@ public void delete(String nome) {
             conn = conex.getConnection();
             String sql = "delete from clientes where nome = ?";
             ps = conn.prepareStatement(sql);
-            ps.setString(5, nome);
+            ps.setString(4, nome);
             ps.execute();
             conn.commit();
             JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
@@ -77,12 +77,12 @@ public void delete(String nome) {
 
             ps = conn.prepareStatement(sql);
             ps.setInt(1, cliente.getCpf());
-            ps.setInt(3, cliente.getRg());
-            ps.setInt(4, cliente.getTelefone());
-            ps.setString(5, cliente.getNome());
-            ps.setString(6, cliente.getSexo());
-            ps.setString(7, cliente.getEstadoCivil());
-            ps.setDate(8, cliente.getDataNascimento());
+            ps.setInt(2, cliente.getRg());
+            ps.setInt(3, cliente.getTelefone());
+            ps.setString(4, cliente.getNome());
+            ps.setString(5, cliente.getSexo());
+            ps.setString(6, cliente.getEstadoCivil());
+            ps.setDate(7, cliente.getDataNascimento());
             ps.execute();
             conn.commit();
 
@@ -136,12 +136,12 @@ public void delete(String nome) {
 
             ps = conn.prepareStatement(sql);
             ps.setInt(1, cliente.getCpf());
-            ps.setInt(3, cliente.getRg());
-            ps.setInt(4, cliente.getTelefone());
-            ps.setString(5, cliente.getNome());
-            ps.setString(6, cliente.getSexo());
-            ps.setString(7, cliente.getEstadoCivil());
-            ps.setDate(8, cliente.getDataNascimento());
+            ps.setInt(2, cliente.getRg());
+            ps.setInt(3, cliente.getTelefone());
+            ps.setString(4, cliente.getNome());
+            ps.setString(5, cliente.getSexo());
+            ps.setString(6, cliente.getEstadoCivil());
+            ps.setDate(7, cliente.getDataNascimento());
             ps.execute();
             
             conn.commit();

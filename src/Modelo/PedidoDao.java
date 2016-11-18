@@ -6,7 +6,6 @@
 package Modelo;
 
 import Controle.Conexao;
-import Dominio.Cliente;
 import Dominio.Pedidos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

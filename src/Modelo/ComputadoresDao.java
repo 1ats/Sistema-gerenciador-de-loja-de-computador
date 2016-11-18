@@ -20,7 +20,7 @@ public class ComputadoresDao {
         try {
 
             conn = conex.getConnection();
-            String sql = "delete from clientes where nome = ?";
+            String sql = "delete from computadores where nome = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(5, nome);
             ps.execute();

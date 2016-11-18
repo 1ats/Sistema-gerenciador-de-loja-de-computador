@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JOptionPane;
 
 public class FuncionarioDao {
-public void delete(int rg) {
+
+    public void delete(int cpf) {
 
         Conexao conex = new Conexao();
         Connection conn = null;
@@ -20,57 +21,57 @@ public void delete(int rg) {
         try {
 
             conn = conex.getConnection();
-            String sql = "delete from funcionario where rg = ?";
+            String sql = "delete from funcionario where cpf = ?";
             ps = conn.prepareStatement(sql);
-            ps.setInt(5, rg);
+            ps.setInt(7, cpf);
             ps.execute();
             conn.commit();
             JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
 
-        } catch(SQLException e) {
+        } catch (SQLException e) {
 
             System.out.println("ERRO: " + e.getMessage());
-            JOptionPane.showMessageDialog(null,"rg não existe!");
+            JOptionPane.showMessageDialog(null, "O cpf não existe!");
 
-            if(conn != null){
+            if (conn != null) {
 
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                     JOptionPane.showMessageDialog(null,"rg não existe!");
+                    JOptionPane.showMessageDialog(null, "O cpf não existe!");
                 }
             }
-        } 
-        finally {
+        } finally {
 
-            if( ps != null) {
+            if (ps != null) {
 
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                     JOptionPane.showMessageDialog(null,"rg não existe!");
+                    JOptionPane.showMessageDialog(null, "O cpf não existe!");
                 }
             }
-            if(conn != null) {
+            if (conn != null) {
 
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                     JOptionPane.showMessageDialog(null,"rg não existe!");
+                    JOptionPane.showMessageDialog(null, "O cpf não existe!");
                 }
             }
         }
     }
+
     public void insert(Funcionario funcionario) {
 
-         Conexao conex = new Conexao();
+        Conexao conex = new Conexao();
         Connection conn = null;
         PreparedStatement ps = null;
 
         try {
 
             conn = conex.getConnection();
-            String sql = "insert into clientes (usuario,senha,confirmasenha,nome,sexo,telefone,estadoCivil,cpf,rg,dataNascimento)"
+            String sql = "insert into funcionario (usuario,senha,confirmasenha,nome,sexo,telefone,estadoCivil,cpf,rg,dataNascimento)"
                     + "values(?,?,?,?,?,?,?,?,?)";
 
             ps = conn.prepareStatement(sql);
@@ -88,38 +89,39 @@ public void delete(int rg) {
 
             JOptionPane.showMessageDialog(null, "Gravado com sucesso!");
 
-        } catch(SQLException e) {
+        } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null,"erro " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "erro " + e.getMessage());
 
-            if(conn != null){
+            if (conn != null) {
 
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null,"ERRO: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "ERRO: " + ex.getMessage());
                 }
             }
         } finally {
 
-            if( ps != null) {
+            if (ps != null) {
 
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null,"ERRO: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "ERRO: " + ex.getMessage());
                 }
             }
-            if(conn != null) {
+            if (conn != null) {
 
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null,"ERRO: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "ERRO: " + ex.getMessage());
                 }
             }
         }
     }
+
     public void atualizar(Funcionario funcionario) {
 
         Connection conn = null;
@@ -130,9 +132,9 @@ public void delete(int rg) {
 
             conn = conex.getConnection();
 
-            String sql = "update clientes set usuario=?,senha=?, nome=?, sexo=?, telefone=? estadoCivil=?, cpf=? rg=? where nome = " + funcionario.getRg() + "";
+            String sql = "update funcionario set usuario=?,senha=?, nome=?, sexo=?, telefone=? estadoCivil=?, cpf=? rg=? where cpf = " + funcionario.getCpf() + "";
 
-            JOptionPane.showMessageDialog(null, funcionario.getRg());
+            JOptionPane.showMessageDialog(null, funcionario.getCpf());
 
             ps = conn.prepareStatement(sql);
             ps.setString(1, funcionario.getUsuario());
@@ -147,40 +149,37 @@ public void delete(int rg) {
             ps.execute();
             conn.commit();
 
-        } catch(SQLException e) {
-            JOptionPane.showMessageDialog(null,"ERRO: " + e.getMessage());
-            
-            if(conn != null){
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERRO: " + e.getMessage());
+
+            if (conn != null) {
 
                 try {
                     conn.rollback();
 
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null,"ERRO: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "ERRO: " + ex.getMessage());
                 }
-            }   
+            }
         } finally {
 
-            if( ps != null) {
+            if (ps != null) {
 
                 try {
                     ps.close();
 
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null,"ERRO: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "ERRO: " + ex.getMessage());
                 }
             }
-            if(conn != null) {
+            if (conn != null) {
 
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null,"ERRO: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "ERRO: " + ex.getMessage());
                 }
             }
         }
     }
 }
-    
-    
-
