@@ -120,50 +120,6 @@ public void delete(String nome) {
             }
         }
     }
-      
-     public void update(Cliente cliente) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-         Conexao conex = new Conexao();
-        try {
-            conn = conex.getConnection();
-            String sql = "update produtos set descricao = ? where codigo = ?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, produto.getDescricao());
-            ps.setInt(2, produto.getCodigo());
-            ps.execute();
-
-            conn.commit();
-        } catch(SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
-
-            if(conn != null){
-                try {
-                    conn.rollback();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-
-
-        } finally {
-            if( ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-            if(conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-        }
-    }
-    
     public void atualizar(Cliente cliente) {
 
         Connection conn = null;
