@@ -1,7 +1,7 @@
-
 package Dominio;
 
 import java.util.Date;
+import Modelo.AdminDao;
 
 /**
  *
@@ -9,8 +9,8 @@ import java.util.Date;
  */
 public class Administrador extends Funcionario {
 
-    public Administrador(String usu, String sen, String confirmarSen, String nom, String sex, int telef, String estadoCiv, int cp, int r, Date DataNasc) {
-        super(usu, sen, confirmarSen, nom, sex, telef, estadoCiv, cp, r, DataNasc);
+    public Administrador(String usuario, String senha, String nome, String sexo, String estadoCivil, int telefone, int cpf, int rg, Date DataNascimento) {
+        super(usuario, senha, nome, sexo, telefone, estadoCivil, cpf, rg, DataNascimento);
     }
-    
+
 }

@@ -13,8 +13,8 @@ import java.util.Date;
  */
 public class Vendedor extends Funcionario {
 
-    public Vendedor(Administrador adm,String usu, String sen, String confirmarSen, String nom, String sex, int telef, String estadoCiv, int cp, int r, Date DataNasc) {
-        super(usu, sen, confirmarSen, nom, sex, telef, estadoCiv, cp, r, DataNasc);
+    public Vendedor(Administrador adm,String usu, String sen, String nom, String sex, int telef, String estadoCiv, int cp, int r, Date DataNasc) {
+        super(usu, sen, nom, sex, telef, estadoCiv, cp, r, DataNasc);
         
     }
     

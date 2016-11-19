@@ -10,7 +10,6 @@ public class Funcionario {
 
     protected String usuario;
     protected String senha;
-    protected String confirmarSenha;
     protected String nome;
     protected String sexo;
     protected int telefone;
@@ -19,10 +18,9 @@ public class Funcionario {
     protected int rg;
     protected Date DataNascimento;
 
-    public Funcionario(String usuario, String senha, String confirmarSenha, String nome, String sexo, int telefone, String estadoCivil, int cpf, int rg, Date DataNascimento) {
+    public Funcionario(String usuario, String senha, String nome, String sexo, int telefone, String estadoCivil, int cpf, int rg, Date DataNascimento) {
         this.usuario = usuario;
         this.senha = senha;
-        this.confirmarSenha = confirmarSenha;
         this.nome = nome;
         this.sexo = sexo;
         this.telefone = telefone;
@@ -46,14 +44,6 @@ public class Funcionario {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getConfirmarSenha() {
-        return confirmarSenha;
-    }
-
-    public void setConfirmarSenha(String confirmarSenha) {
-        this.confirmarSenha = confirmarSenha;
     }
 
     public String getNome() {
