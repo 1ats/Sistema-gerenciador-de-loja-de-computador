@@ -1,48 +1,38 @@
 package view;
 
-import Controle.ControleAdministrador;
-import Controle.ControleCliente;
-import Controle.ControleComputador;
-import Controle.ControleConsultarVenda;
-import Controle.ControleMensagem;
-import Controle.ControleSobre;
-import Controle.ControleVenda;
-import Controle.ControleVendedor;
+import static Controle.ControleAdministrador.jdprincipal;
 import controle.Principal;
 import java.awt.Color;
-
-
+import static java.awt.SystemColor.menu;
 
 /**
  *
  * @author aminathamiguel
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-    
-    ControleAdministrador cadadmin;
-    ControleCliente cadcliente;
-    ControleConsultarVenda cvenda;
-    ControleComputador cadcomputador;
-    ControleVenda venda;
-    ControleMensagem smensagem;
-    ControleVendedor cadvendedor;
-    ControleSobre sobreinfo;
-    /**
-     * Creates new form NossaTelaPrincipal
-     */
+
+    CadastroAdministrador cadadmin;
+    CadastroCliente cadcliente;
+    CadastroVendedor cadvendedor;
+    CadastroComputadores cadcomputador;
+    ConsultarVenda cvenda;
+    SACMensagem smensagem;
+    Sobre sobre;
+    Venda venda;
+    // Creates new form NossaTelaPrincipal
     Principal listener = new Principal(this);
 
     public TelaPrincipal() {
         initComponents();
-        cadadmin = new ControleAdministrador(jdprincipal);
-        cadcliente = new ControleCliente(jdprincipal);
-        cadcomputador = new ControleComputador(jdprincipal);
-        cadvendedor = new ControleVendedor(jdprincipal);
-        cvenda = new ControleConsultarVenda(jdprincipal);
-        venda = new ControleVenda(jdprincipal);
-        sobreinfo = new ControleSobre(jdprincipal);
-        smensagem = new ControleMensagem(jdprincipal);
-        
+        /*cadadmin = new ControleAdministrador(jdprincipal);
+         cadcliente = new ControleCliente(jdprincipal);
+         cadcomputador = new ControleComputador(jdprincipal);
+         cadvendedor = new ControleVendedor(jdprincipal);
+         cvenda = new ControleConsultarVenda(jdprincipal);
+         venda = new ControleVenda(jdprincipal);
+         sobreinfo = new ControleSobre(jdprincipal);
+         smensagem = new ControleMensagem(jdprincipal);
+         */
         getContentPane().setBackground(Color.WHITE);  //YELLOW
     }
 
@@ -223,6 +213,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadastro.add(jMenuItemComputadores);
 
         jMenu1.setText("Funcionario ");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setText("Administrador");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -296,12 +291,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
         // TODO add your handling code here:
-         cadcliente.CadastroCl(CadastroCliente.getInstancia());
+        //cadcliente.CadastroCl(CadastroCliente.getInstancia());
+        if (cadcliente == null) {
+            cadcliente = new CadastroCliente();
+            jdprincipal.add(cadcliente);;
+        }
+        cadcliente.setVisible(true);
     }//GEN-LAST:event_jMenuItemClienteActionPerformed
 
     private void jMenuItemConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsultarActionPerformed
         // TODO add your handling code here:
-        cvenda.CadastroConsulVend(ConsultarVenda.getInstancia());
+        //cvenda.CadastroConsulVend(ConsultarVenda.getInstancia());
+        if (cvenda == null) {
+            cvenda = new ConsultarVenda();
+            jdprincipal.add(cvenda);
+        }
+        cvenda.setVisible(true);
     }//GEN-LAST:event_jMenuItemConsultarActionPerformed
 
     private void jMenuItemFinalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFinalizarProgramaActionPerformed
@@ -311,32 +316,61 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemComputadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemComputadoresActionPerformed
         // TODO add your handling code here:
-        cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
+        //cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
+        if (cadcomputador == null) {
+            cadcomputador = new CadastroComputadores();
+            jdprincipal.add(cadcomputador);
+        }
+        cadcomputador.setVisible(true);
     }//GEN-LAST:event_jMenuItemComputadoresActionPerformed
 
     private void jMenuItemRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRealizarActionPerformed
         // TODO add your handling code here:
-        venda.Vendas(Venda.getInstancia());
+       // venda.Vendas(Venda.getInstancia());
+        if (venda == null) {
+            venda = new Venda();
+            jdprincipal.add(venda);
+        }
+        venda.setVisible(true);
     }//GEN-LAST:event_jMenuItemRealizarActionPerformed
 
     private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
         // TODO add your handling code here:
-        smensagem.SACMens(SACMensagem.getInstancia());
+       // smensagem.SACMens(SACMensagem.getInstancia());
+        if (smensagem == null) {
+            smensagem = new SACMensagem();
+            jdprincipal.add(smensagem);;
+        }
+        smensagem.setVisible(true);
     }//GEN-LAST:event_jMenuItemMensagensActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        cadadmin.CadastroAdm(CadastroAdministrador.getInstancia());
+        if (cadadmin == null) {
+            cadadmin = new CadastroAdministrador();
+            jdprincipal.add(cadadmin);
+        }
+        cadadmin.setVisible(true);
+        //cadadmin.CadastroAdm(CadastroAdministrador.getInstancia());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        cadvendedor.CadastroVended(CadastroVendedor.getInstancia());
+       if (cadvendedor == null) {
+            cadvendedor = new CadastroVendedor();
+            jdprincipal.add(cadvendedor);;
+        }
+        cadvendedor.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
         // TODO add your handling code here:
-        sobreinfo.SobreProgram(Sobre.getInstancia());
+      //  sobreinfo.SobreProgram(Sobre.getInstancia());
+        if (sobre == null) {
+            sobre = new Sobre();
+            jdprincipal.add(sobre);;
+        }
+        sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     private void finalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarProgramaActionPerformed
@@ -346,23 +380,52 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void sacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sacActionPerformed
         // TODO add your handling code here:
-        smensagem.SACMens(SACMensagem.getInstancia());
+        //smensagem.SACMens(SACMensagem.getInstancia());
+        if (smensagem == null) {
+            smensagem = new SACMensagem();
+            jdprincipal.add(smensagem);;
+        }
+        smensagem.setVisible(true);
     }//GEN-LAST:event_sacActionPerformed
 
     private void realizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarVendaActionPerformed
         // TODO add your handling code here:
-        venda.Vendas(Venda.getInstancia());
+        //venda.Vendas(Venda.getInstancia());
+        if (venda == null) {
+            venda = new Venda();
+            jdprincipal.add(venda);
+        }
+        venda.setVisible(true);
     }//GEN-LAST:event_realizarVendaActionPerformed
 
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
         // TODO add your handling code here:
-        cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
+        //cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
+        if (cadcomputador == null) {
+            cadcomputador = new CadastroComputadores();
+            jdprincipal.add(cadcomputador);
+        }
+        cadcomputador.setVisible(true);
     }//GEN-LAST:event_cadastrarProdutoActionPerformed
 
     private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
         // TODO add your handling code here:
-        cadcliente.CadastroCl(CadastroCliente.getInstancia());
+        //cadcliente.CadastroCl(CadastroCliente.getInstancia());
+        if (cadcliente == null) {
+            cadcliente = new CadastroCliente();
+            jdprincipal.add(cadcliente);;
+        }
+        cadcliente.setVisible(true);
     }//GEN-LAST:event_cadastrarClienteActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+        if (cadadmin == null) {
+            cadadmin = new CadastroAdministrador();
+            jdprincipal.add(cadadmin);
+        }
+        cadadmin.setVisible(true);
+    }//GEN-LAST:event_jMenu1ActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

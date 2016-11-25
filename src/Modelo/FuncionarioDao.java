@@ -79,10 +79,10 @@ public class FuncionarioDao {
             ps.setString(2, funcionario.getSenha());
             ps.setString(3, funcionario.getNome());
             ps.setString(4, funcionario.getSexo());
-            ps.setInt(5, funcionario.getTelefone());
+            ps.setString(5, funcionario.getTelefone());
             ps.setString(6, funcionario.getEstadoCivil());
-            ps.setInt(7, funcionario.getCpf());
-            ps.setInt(8, funcionario.getRg());
+            ps.setString(7, funcionario.getCpf());
+            ps.setString(8, funcionario.getRg());
             ps.setDate(9, (java.sql.Date) funcionario.getDataNascimento());
             ps.execute();
             conn.commit();
@@ -141,10 +141,10 @@ public class FuncionarioDao {
             ps.setString(2, funcionario.getSenha());
             ps.setString(3, funcionario.getNome());
             ps.setString(4, funcionario.getSexo());
-            ps.setInt(5, funcionario.getTelefone());
+            ps.setString(5, funcionario.getTelefone());
             ps.setString(6, funcionario.getEstadoCivil());
-            ps.setInt(7, funcionario.getCpf());
-            ps.setInt(8, funcionario.getRg());
+            ps.setString(7, funcionario.getCpf());
+            ps.setString(8, funcionario.getRg());
             ps.setDate(9, (java.sql.Date) funcionario.getDataNascimento());
             ps.execute();
             conn.commit();

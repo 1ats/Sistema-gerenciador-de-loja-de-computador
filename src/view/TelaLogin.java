@@ -176,6 +176,10 @@ public class TelaLogin extends javax.swing.JFrame {
                 }
             }
         });
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setLocationRelativeTo(null);
+        tela.setVisible(true);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

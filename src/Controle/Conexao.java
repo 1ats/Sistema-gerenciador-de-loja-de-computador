@@ -7,17 +7,17 @@ import javax.swing.JOptionPane;
 
 public class Conexao {
 
-    Connection connect = null;
+    Connection conn = null;
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
 
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://localhost/tarefas", "sa", "");
-        } catch (ClassNotFoundException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/tarefas", "sa", "");
         } catch (SQLException e) {
+            System.out.println("ERRO: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
             System.out.println("ERRO: " + e.getMessage());
         }
         return conn;
@@ -25,9 +25,10 @@ public class Conexao {
 
     public void desconectar() {
         try {
-            connect.close();
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao fechar conexão" + e.getMessage());
         }
     }
+
 }

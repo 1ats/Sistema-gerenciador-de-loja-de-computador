@@ -12,13 +12,13 @@ public class Funcionario {
     protected String senha;
     protected String nome;
     protected String sexo;
-    protected int telefone;
+    protected String telefone;
     protected String estadoCivil;
-    protected int cpf;
-    protected int rg;
+    protected String cpf;
+    protected String rg;
     protected Date DataNascimento;
 
-    public Funcionario(String usuario, String senha, String nome, String sexo, int telefone, String estadoCivil, int cpf, int rg, Date DataNascimento) {
+    public Funcionario(String usuario, String senha, String nome, String sexo, String telefone, String estadoCivil, String cpf, String rg, Date DataNascimento) {
         this.usuario = usuario;
         this.senha = senha;
         this.nome = nome;
@@ -62,11 +62,11 @@ public class Funcionario {
         this.sexo = sexo;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -78,19 +78,19 @@ public class Funcionario {
         this.estadoCivil = estadoCivil;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getRg() {
+    public String getRg() {
         return rg;
     }
 
-    public void setRg(int rg) {
+    public void setRg(String rg) {
         this.rg = rg;
     }
 

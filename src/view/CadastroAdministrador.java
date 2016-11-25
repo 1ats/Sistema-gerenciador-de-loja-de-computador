@@ -7,18 +7,11 @@ import Controle.ControleAdministrador;
  * @author aminathamiguel
  */
 public class CadastroAdministrador extends javax.swing.JInternalFrame {
+    CadastroAdministrador cadadm = new CadastroAdministrador();
 
-    private static CadastroAdministrador cadastroadministrador;
     private ControleAdministrador listener = new ControleAdministrador(this);
 
-    public static CadastroAdministrador getInstancia() {
-        if (cadastroadministrador == null) {
-            cadastroadministrador = new CadastroAdministrador();
-
-        }
-        return cadastroadministrador;
-    }
-
+    
     /**
      * Creates new form CadastroAdministrador
      */
@@ -336,6 +329,18 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
+       /* usuario.setText("");
+        senha.setText("");
+        confirmarSenha.setText("");
+        nome.setText("");
+        cpf.setText("");
+        rg.setText("");
+        telefone.setText("");
+        dia.setActionCommand("1");
+        mes.setActionCommand("Janeiro");
+        ano.setActionCommand("1900");
+        sexo.setActionCommand("Masculino");*/
+    
         this.setVisible(false);
     }//GEN-LAST:event_cancelarActionPerformed
 
@@ -430,4 +435,5 @@ public void limpar(){
         ano.setActionCommand("1900");
         sexo.setActionCommand("Masculino");
     }
+
 }
