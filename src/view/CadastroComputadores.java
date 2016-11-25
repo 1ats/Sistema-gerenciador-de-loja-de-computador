@@ -1,6 +1,6 @@
 package view;
 
-import Controle.ControleComputador;
+import gerenciamento.controle.ControleComputador;
 
 /**
  *

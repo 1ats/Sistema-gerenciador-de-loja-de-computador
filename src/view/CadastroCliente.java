@@ -1,6 +1,6 @@
 package view;
 
-import Controle.ControleCliente;
+import gerenciamento.controle.ControleCliente;
 
 /**
  *

@@ -6,7 +6,7 @@
 package view;
 
 import ArquivoLog.Arquivo;
-import controle.LoginC;
+import gerenciamento.controle.LoginC;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

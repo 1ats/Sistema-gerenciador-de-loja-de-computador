@@ -5,7 +5,7 @@
  */
 package view;
 
-import Controle.ControleVenda;
+import gerenciamento.controle.ControleVenda;
 import java.awt.event.ItemListener;
 
 /**

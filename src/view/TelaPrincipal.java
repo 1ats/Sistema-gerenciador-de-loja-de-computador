@@ -1,7 +1,7 @@
 package view;
 
-import static Controle.ControleAdministrador.jdprincipal;
-import controle.Principal;
+import static gerenciamento.controle.ControleAdministrador.jdprincipal;
+import gerenciamento.controle.Principal;
 import java.awt.Color;
 import static java.awt.SystemColor.menu;
 

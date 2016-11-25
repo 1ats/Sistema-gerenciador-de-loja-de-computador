@@ -1,6 +1,6 @@
 package view;
 
-import Controle.ControleAdministrador;
+import gerenciamento.controle.ControleAdministrador;
 
 /**
  *

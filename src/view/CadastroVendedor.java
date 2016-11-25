@@ -5,7 +5,7 @@
  */
 package view;
 
-import Controle.ControleVendedor;
+import gerenciamento.controle.ControleVendedor;
 
 /**
  *
