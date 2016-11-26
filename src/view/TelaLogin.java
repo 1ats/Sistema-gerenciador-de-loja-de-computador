@@ -5,8 +5,8 @@
  */
 package view;
 
-import ArquivoLog.Arquivo;
-import gerenciamento.controle.LoginC;
+//import ArquivoLog.Arquivo;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,13 +17,12 @@ import javax.swing.JOptionPane;
  * @author aminathamiguel
  */
 public class TelaLogin extends javax.swing.JFrame {
-        
-  // Arquivo arq=new Arquivo();
-    private LoginC listener = new LoginC(this);
 
+    // Arquivo arq=new Arquivo();
+    //private LoginC listener = new LoginC(this);
     public TelaLogin() throws IOException {
         initComponents();
-        try {
+        /*  try {
       String dado= Arquivo.ler("C:\\Users\\HP\\Documents\\NetBeansProjects\\GerenciamentoLoja\\log.txt");
       int k = dado.length();
              int j = 0;
@@ -40,7 +39,7 @@ public class TelaLogin extends javax.swing.JFrame {
         }catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Arquivo não encontrado");
            
-        }
+        }*/
     }
 
     /**
@@ -55,6 +54,7 @@ public class TelaLogin extends javax.swing.JFrame {
         Usuario = new javax.swing.JLabel();
         Senha = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
+        sair = new javax.swing.JButton();
         acessar = new javax.swing.JButton();
         senha = new javax.swing.JPasswordField();
         imagem = new javax.swing.JLabel();
@@ -70,13 +70,13 @@ public class TelaLogin extends javax.swing.JFrame {
         Usuario.setForeground(new java.awt.Color(255, 255, 255));
         Usuario.setText("Usuário:");
         getContentPane().add(Usuario);
-        Usuario.setBounds(50, 30, 66, 21);
+        Usuario.setBounds(60, 80, 100, 20);
 
         Senha.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         Senha.setForeground(new java.awt.Color(255, 255, 255));
         Senha.setText("Senha:");
         getContentPane().add(Senha);
-        Senha.setBounds(60, 80, 55, 21);
+        Senha.setBounds(70, 140, 90, 20);
 
         usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +84,16 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(usuario);
-        usuario.setBounds(140, 20, 230, 38);
+        usuario.setBounds(150, 70, 270, 40);
+
+        sair.setText("Sair");
+        sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(sair);
+        sair.setBounds(300, 180, 100, 30);
 
         acessar.setText("Acessar");
         acessar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +102,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(acessar);
-        acessar.setBounds(200, 130, 110, 23);
+        acessar.setBounds(180, 180, 100, 30);
 
         senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,19 +110,26 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(senha);
-        senha.setBounds(140, 70, 230, 40);
+        senha.setBounds(150, 130, 270, 40);
 
-        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Redes.jpg"))); // NOI18N
+        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tecnologia-informacao-537b9085c0abe.jpg"))); // NOI18N
         getContentPane().add(imagem);
-        imagem.setBounds(0, 0, 430, 170);
+        imagem.setBounds(0, -10, 500, 290);
 
-        setSize(new java.awt.Dimension(430, 191));
+        setSize(new java.awt.Dimension(497, 292));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void acessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarActionPerformed
         // TODO add your handling code here:
-        if (usuario.getText().equals("tuti") && senha.getText().equals("1234")) {
+        if(usuario.getText().equals("adm") && senha.getText().equals("1234")){
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setVisible(true);
+        dispose();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválida");
+        }
+        /*if (usuario.getText().equals("tuti") && senha.getText().equals("1234")) {
              try {
             Arquivo.escrever("tuti", "log.txt");
         } catch (IOException e) {
@@ -127,7 +143,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(null, "Usuário ou senha Inválida");
-        }
+        }*/
     }//GEN-LAST:event_acessarActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
@@ -137,6 +153,11 @@ public class TelaLogin extends javax.swing.JFrame {
     private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_senhaActionPerformed
+
+    private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_sairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,21 +186,18 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-    
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
                     new TelaLogin().setVisible(true);
                 } catch (IOException ex) {
-                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(null, "Erro ao conectar o sistema");
                 }
             }
         });
-        TelaPrincipal tela = new TelaPrincipal();
-        tela.setLocationRelativeTo(null);
-        tela.setVisible(true);
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -187,6 +205,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel Usuario;
     private javax.swing.JButton acessar;
     private javax.swing.JLabel imagem;
+    private javax.swing.JButton sair;
     public javax.swing.JPasswordField senha;
     public javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables

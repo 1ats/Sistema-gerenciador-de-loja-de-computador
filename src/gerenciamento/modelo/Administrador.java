@@ -1,32 +1,33 @@
 package gerenciamento.modelo;
 
 import java.util.Date;
-import gerencimanento.dao.AdminDao;
+import gerenciamento.dao.AdministradorDAO;
 
 /**
  *
  * @author aminathamiguel
  */
-public class Administrador{
+public class Administrador {
+
     private String usuario;
     private String senha;
     private String nome;
     private String sexo;
-    private String telefone;
-    private String estadoCivil;
-    private String cpf;
-    private String rg;
+    private int telefone;
+    private int cpf;
     private Date DataNascimento;
+    private String pesquisa;
+    
 
-    public Administrador(String usuario, String senha, String nome, String sexo, String telefone, String estadoCivil, String cpf, String rg, Date DataNascimento) {
+    public Administrador(String usuario, String senha, String nome, String sexo, int telefone, int cpf, Date DataNascimento) {
         this.usuario = usuario;
         this.senha = senha;
         this.nome = nome;
         this.sexo = sexo;
         this.telefone = telefone;
-        this.estadoCivil = estadoCivil;
+
         this.cpf = cpf;
-        this.rg = rg;
+
         this.DataNascimento = DataNascimento;
     }
 
@@ -65,36 +66,20 @@ public class Administrador{
         this.sexo = sexo;
     }
 
-    public String getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-    }
-
-    public String getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
     }
 
     public Date getDataNascimento() {
@@ -104,4 +89,19 @@ public class Administrador{
     public void setDataNascimento(Date DataNascimento) {
         this.DataNascimento = DataNascimento;
     }
+
+    /**
+     * @return the pesquisa
+     */
+    public String getPesquisa() {
+        return pesquisa;
+    }
+
+    /**
+     * @param pesquisa the pesquisa to set
+     */
+    public void setPesquisa(String pesquisa) {
+        this.pesquisa = pesquisa;
+    }
+
 }

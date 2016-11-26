@@ -7,16 +7,6 @@ package view;
  */
 public class ConsultarVenda extends javax.swing.JInternalFrame {
     
-    private static ConsultarVenda consultarvenda;
-
-    public static ConsultarVenda getInstancia() {
-        if (consultarvenda == null) {
-            consultarvenda = new ConsultarVenda();
-
-        }
-        return consultarvenda;
-    }
-
     /**
      * Creates new form ConsultarVenda
      */

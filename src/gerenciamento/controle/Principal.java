@@ -1,27 +1,17 @@
 package gerenciamento.controle;
 
-import view.TelaPrincipal;
-import view.CadastroCliente;
-import view.CadastroComputadores;
-import view.CadastroAdministrador;
-import view.ConsultarVenda;
-import view.Sobre;
-import view.SACMensagem;
-import view.Venda;
-import view.CadastroVendedor;
-import view.TelaLogin;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
  *
  * @author aminathamiguel
  */
-public class Principal implements ActionListener {
+/*public class Principal implements ActionListener {
 
+    Conexao conecta = new Conexao();
     private TelaPrincipal frame1;
 
     public Principal(TelaPrincipal frame1) {
+
+        conecta.conexao();
         this.frame1 = frame1;
     }
 
@@ -89,4 +79,4 @@ public class Principal implements ActionListener {
             sacmen.setVisible(true);
         }
     }
-}
+}*/

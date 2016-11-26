@@ -1,7 +1,7 @@
 package view;
 
-import static gerenciamento.controle.ControleAdministrador.jdprincipal;
-import gerenciamento.controle.Principal;
+import gerenciamento.conexao.Conexao;
+
 import java.awt.Color;
 import static java.awt.SystemColor.menu;
 
@@ -10,29 +10,23 @@ import static java.awt.SystemColor.menu;
  * @author aminathamiguel
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
+    Conexao conecta = new Conexao();
+     
     CadastroAdministrador cadadmin;
     CadastroCliente cadcliente;
-    CadastroVendedor cadvendedor;
+    
     CadastroComputadores cadcomputador;
     ConsultarVenda cvenda;
     SACMensagem smensagem;
     Sobre sobre;
     Venda venda;
     // Creates new form NossaTelaPrincipal
-    Principal listener = new Principal(this);
+    //Principal listener = new Principal(this);
 
     public TelaPrincipal() {
         initComponents();
-        /*cadadmin = new ControleAdministrador(jdprincipal);
-         cadcliente = new ControleCliente(jdprincipal);
-         cadcomputador = new ControleComputador(jdprincipal);
-         cadvendedor = new ControleVendedor(jdprincipal);
-         cvenda = new ControleConsultarVenda(jdprincipal);
-         venda = new ControleVenda(jdprincipal);
-         sobreinfo = new ControleSobre(jdprincipal);
-         smensagem = new ControleMensagem(jdprincipal);
-         */
+        conecta.conexao();
+        
         getContentPane().setBackground(Color.WHITE);  //YELLOW
     }
 
@@ -47,26 +41,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        cadastrarCliente = new javax.swing.JButton();
-        cadastrarProduto = new javax.swing.JButton();
-        realizarVenda = new javax.swing.JButton();
-        sac = new javax.swing.JButton();
-        finalizarPrograma = new javax.swing.JButton();
         jdprincipal = new javax.swing.JDesktopPane();
+        jdbemvindo = new javax.swing.JInternalFrame();
+        pesquisarcliente4 = new javax.swing.JButton();
+        pesquisarcomputador4 = new javax.swing.JButton();
+        cadastrarcliente = new javax.swing.JButton();
+        cadastrarcomputador = new javax.swing.JButton();
+        realizarvenda = new javax.swing.JButton();
+        finalizarprograma = new javax.swing.JButton();
+        jLabelFundoBemVindo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
         menuUsuario = new javax.swing.JMenu();
         jMenuItemFinalizarPrograma = new javax.swing.JMenuItem();
         menuCadastro = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        funcionario = new javax.swing.JMenuItem();
         jMenuItemCliente = new javax.swing.JMenuItem();
         jMenuItemComputadores = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
         jMenuItemRealizar = new javax.swing.JMenuItem();
         jMenuItemConsultar = new javax.swing.JMenuItem();
-        menuSAC = new javax.swing.JMenu();
+        telabemvindo = new javax.swing.JMenu();
         jMenuItemMensagens = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         jMenuItemSobre = new javax.swing.JMenuItem();
@@ -83,98 +79,104 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Menu Rápido", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
+        jdprincipal.setLayout(null);
 
-        cadastrarCliente.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        cadastrarCliente.setText("Cadastrar Cliente");
-        cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
+        jdbemvindo.setClosable(true);
+        jdbemvindo.setTitle("Bem Vindo");
+        jdbemvindo.setToolTipText("");
+        jdbemvindo.setVisible(true);
+        jdbemvindo.getContentPane().setLayout(null);
+
+        pesquisarcliente4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        pesquisarcliente4.setText("Pesquisar Cliente");
+        pesquisarcliente4.setBounds(new java.awt.Rectangle(340, 130, 210, 35));
+        pesquisarcliente4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarClienteActionPerformed(evt);
+                pesquisarcliente4ActionPerformed(evt);
             }
         });
+        jdbemvindo.getContentPane().add(pesquisarcliente4);
+        pesquisarcliente4.setBounds(340, 130, 210, 35);
 
-        cadastrarProduto.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        cadastrarProduto.setText("Cadastrar Produto");
-        cadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarcomputador4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        pesquisarcomputador4.setText("Pesquisar Computador");
+        pesquisarcomputador4.setPreferredSize(new java.awt.Dimension(161, 29));
+        pesquisarcomputador4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarProdutoActionPerformed(evt);
+                pesquisarcomputador4ActionPerformed(evt);
             }
         });
+        jdbemvindo.getContentPane().add(pesquisarcomputador4);
+        pesquisarcomputador4.setBounds(340, 170, 210, 35);
 
-        realizarVenda.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        realizarVenda.setText("Realizar Venda");
-        realizarVenda.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarcliente.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        cadastrarcliente.setText("Cadastrar Cliente");
+        cadastrarcliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                realizarVendaActionPerformed(evt);
+                cadastrarclienteActionPerformed(evt);
             }
         });
+        jdbemvindo.getContentPane().add(cadastrarcliente);
+        cadastrarcliente.setBounds(90, 130, 210, 35);
 
-        sac.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        sac.setText("SAC");
-        sac.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarcomputador.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        cadastrarcomputador.setText("Cadastrar Computador");
+        cadastrarcomputador.setPreferredSize(new java.awt.Dimension(161, 29));
+        cadastrarcomputador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sacActionPerformed(evt);
+                cadastrarcomputadorActionPerformed(evt);
             }
         });
+        jdbemvindo.getContentPane().add(cadastrarcomputador);
+        cadastrarcomputador.setBounds(90, 170, 210, 35);
 
-        finalizarPrograma.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        finalizarPrograma.setText("Filanizar o Programa");
-        finalizarPrograma.addActionListener(new java.awt.event.ActionListener() {
+        realizarvenda.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        realizarvenda.setText("Realizar Venda");
+        realizarvenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                finalizarProgramaActionPerformed(evt);
+                realizarvendaActionPerformed(evt);
             }
         });
+        jdbemvindo.getContentPane().add(realizarvenda);
+        realizarvenda.setBounds(90, 210, 210, 35);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sac, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cadastrarCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cadastrarProduto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(realizarVenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(finalizarPrograma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(cadastrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(realizarVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(sac, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(finalizarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        finalizarprograma.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        finalizarprograma.setText("Finalizar Programa");
+        finalizarprograma.setPreferredSize(new java.awt.Dimension(161, 29));
+        finalizarprograma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finalizarprogramaActionPerformed(evt);
+            }
+        });
+        jdbemvindo.getContentPane().add(finalizarprograma);
+        finalizarprograma.setBounds(340, 210, 210, 35);
+
+        jLabelFundoBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ecran-chiffres-binaires.png"))); // NOI18N
+        jLabelFundoBemVindo.setLabelFor(jdprincipal);
+        jLabelFundoBemVindo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jdbemvindo.getContentPane().add(jLabelFundoBemVindo);
+        jLabelFundoBemVindo.setBounds(0, 69, 626, 245);
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel1.setText("Sistema de Gerenciamento de:");
+        jdbemvindo.getContentPane().add(jLabel1);
+        jLabel1.setBounds(6, 23, 209, 28);
+
+        jdprincipal.add(jdbemvindo);
+        jdbemvindo.setBounds(20, 90, 650, 360);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdprincipal))
+            .addComponent(jdprincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jdprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jdprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
@@ -196,6 +198,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuCadastro.setText("Cadastro");
 
+        jMenuItem1.setText("Administrador");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuCadastro.add(jMenuItem1);
+
+        funcionario.setText("Funcionário");
+        funcionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                funcionarioActionPerformed(evt);
+            }
+        });
+        menuCadastro.add(funcionario);
+
         jMenuItemCliente.setText("Cliente");
         jMenuItemCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,31 +229,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         menuCadastro.add(jMenuItemComputadores);
-
-        jMenu1.setText("Funcionario ");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
-            }
-        });
-
-        jMenuItem1.setText("Administrador");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setText("Vendedor");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        menuCadastro.add(jMenu1);
 
         menu.add(menuCadastro);
 
@@ -259,17 +252,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menu.add(menuVenda);
 
-        menuSAC.setText("SAC");
+        telabemvindo.setText("Ferramentas");
 
-        jMenuItemMensagens.setText("Mensagens");
+        jMenuItemMensagens.setText("Tela Bem-Vindo");
         jMenuItemMensagens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemMensagensActionPerformed(evt);
             }
         });
-        menuSAC.add(jMenuItemMensagens);
+        telabemvindo.add(jMenuItemMensagens);
 
-        menu.add(menuSAC);
+        menu.add(telabemvindo);
 
         menuAjuda.setText("Ajuda");
 
@@ -291,7 +284,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
         // TODO add your handling code here:
-        //cadcliente.CadastroCl(CadastroCliente.getInstancia());
+        //CadastroCliente cadacliente = new CadastroCliente();
+        //tela.setVisible(true);
         if (cadcliente == null) {
             cadcliente = new CadastroCliente();
             jdprincipal.add(cadcliente);;
@@ -311,6 +305,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemFinalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFinalizarProgramaActionPerformed
         // TODO add your handling code here:
+        conecta.desconecta();
         System.exit(0);
     }//GEN-LAST:event_jMenuItemFinalizarProgramaActionPerformed
 
@@ -337,11 +332,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
         // TODO add your handling code here:
        // smensagem.SACMens(SACMensagem.getInstancia());
-        if (smensagem == null) {
+       TelaPrincipal tela = new TelaPrincipal();
+       tela.setVisible(true);
+       dispose();
+        /*if (smensagem == null) {
             smensagem = new SACMensagem();
             jdprincipal.add(smensagem);;
         }
-        smensagem.setVisible(true);
+        smensagem.setVisible(true);*/
     }//GEN-LAST:event_jMenuItemMensagensActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -354,15 +352,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //cadadmin.CadastroAdm(CadastroAdministrador.getInstancia());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-       if (cadvendedor == null) {
-            cadvendedor = new CadastroVendedor();
-            jdprincipal.add(cadvendedor);;
-        }
-        cadvendedor.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
         // TODO add your handling code here:
       //  sobreinfo.SobreProgram(Sobre.getInstancia());
@@ -373,59 +362,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
-    private void finalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarProgramaActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_finalizarProgramaActionPerformed
-
-    private void sacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sacActionPerformed
-        // TODO add your handling code here:
-        //smensagem.SACMens(SACMensagem.getInstancia());
-        if (smensagem == null) {
-            smensagem = new SACMensagem();
-            jdprincipal.add(smensagem);;
-        }
-        smensagem.setVisible(true);
-    }//GEN-LAST:event_sacActionPerformed
-
-    private void realizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarVendaActionPerformed
-        // TODO add your handling code here:
-        //venda.Vendas(Venda.getInstancia());
-        if (venda == null) {
-            venda = new Venda();
-            jdprincipal.add(venda);
-        }
-        venda.setVisible(true);
-    }//GEN-LAST:event_realizarVendaActionPerformed
-
-    private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
-        // TODO add your handling code here:
-        //cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
-        if (cadcomputador == null) {
-            cadcomputador = new CadastroComputadores();
-            jdprincipal.add(cadcomputador);
-        }
-        cadcomputador.setVisible(true);
-    }//GEN-LAST:event_cadastrarProdutoActionPerformed
-
-    private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
-        // TODO add your handling code here:
-        //cadcliente.CadastroCl(CadastroCliente.getInstancia());
-        if (cadcliente == null) {
-            cadcliente = new CadastroCliente();
-            jdprincipal.add(cadcliente);;
-        }
-        cadcliente.setVisible(true);
-    }//GEN-LAST:event_cadastrarClienteActionPerformed
-
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_funcionarioActionPerformed
         // TODO add your handling code here:
         if (cadadmin == null) {
             cadadmin = new CadastroAdministrador();
             jdprincipal.add(cadadmin);
         }
         cadadmin.setVisible(true);
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    }//GEN-LAST:event_funcionarioActionPerformed
+
+    private void pesquisarcliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarcliente4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pesquisarcliente4ActionPerformed
+
+    private void pesquisarcomputador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarcomputador4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pesquisarcomputador4ActionPerformed
+
+    private void cadastrarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarclienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastrarclienteActionPerformed
+
+    private void cadastrarcomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarcomputadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastrarcomputadorActionPerformed
+
+    private void realizarvendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarvendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_realizarvendaActionPerformed
+
+    private void finalizarprogramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarprogramaActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_finalizarprogramaActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -460,12 +429,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cadastrarCliente;
-    private javax.swing.JButton cadastrarProduto;
-    private javax.swing.JButton finalizarPrograma;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JButton cadastrarcliente;
+    private javax.swing.JButton cadastrarcomputador;
+    private javax.swing.JButton finalizarprograma;
+    private javax.swing.JMenuItem funcionario;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelFundoBemVindo;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemCliente;
     private javax.swing.JMenuItem jMenuItemComputadores;
     private javax.swing.JMenuItem jMenuItemConsultar;
@@ -475,15 +445,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemSobre;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JInternalFrame jdbemvindo;
     public javax.swing.JDesktopPane jdprincipal;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuAjuda;
     private javax.swing.JMenu menuCadastro;
-    private javax.swing.JMenu menuSAC;
     private javax.swing.JMenu menuUsuario;
     private javax.swing.JMenu menuVenda;
-    private javax.swing.JButton realizarVenda;
-    private javax.swing.JButton sac;
+    private javax.swing.JButton pesquisarcliente4;
+    private javax.swing.JButton pesquisarcomputador4;
+    private javax.swing.JButton realizarvenda;
+    private javax.swing.JMenu telabemvindo;
     // End of variables declaration//GEN-END:variables
 }

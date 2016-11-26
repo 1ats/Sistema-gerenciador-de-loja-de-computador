@@ -14,21 +14,20 @@ import java.sql.Date;
 public class Cliente {
     private int cpf;
     private Funcionario func;
-    private int rg;
+    
     private String nome;
     private String sexo;
     private int telefone;
-    private String estadoCivil;
     private Date dataNascimento;
 
-    public Cliente(int cpf, Funcionario func, int rg, String nome, String sexo, int telefone, String estadoCivil, Date dataNascimento) {
+    public Cliente(int cpf, Funcionario func, String nome, String sexo, int telefone, Date dataNascimento) {
         this.cpf = cpf;
         this.func = func;
-        this.rg = rg;
+        
         this.nome = nome;
         this.sexo = sexo;
         this.telefone = telefone;
-        this.estadoCivil = estadoCivil;
+        
         this.dataNascimento = dataNascimento;
     }
 
@@ -46,14 +45,6 @@ public class Cliente {
 
     public void setFunc(Funcionario func) {
         this.func = func;
-    }
-
-    public int getRg() {
-        return rg;
-    }
-
-    public void setRg(int rg) {
-        this.rg = rg;
     }
 
     public String getNome() {
@@ -78,14 +69,6 @@ public class Cliente {
 
     public void setTelefone(int telefone) {
         this.telefone = telefone;
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
     }
 
     public Date getDataNascimento() {

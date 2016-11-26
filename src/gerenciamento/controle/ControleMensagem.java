@@ -10,7 +10,7 @@ import view.SACMensagem;
  *
  * @author aminathamiguel
  */
-public class ControleMensagem implements ActionListener {
+/*public class ControleMensagem implements ActionListener {
 
     public static JDesktopPane jdprincipal;
     
@@ -47,4 +47,4 @@ public class ControleMensagem implements ActionListener {
             mensagem.setVisible(true);
         }
     }
-}
+}*/

@@ -1,15 +1,8 @@
 package gerenciamento.controle;
 
-import gerenciamento.modelo.Login;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
-import view.TelaLogin;
-import view.TelaPrincipal;
 
 
-
-public class LoginC implements ActionListener {
+/*public class LoginC implements ActionListener {
 
     private TelaLogin frame1;
 
@@ -38,5 +31,5 @@ public class LoginC implements ActionListener {
             }
         }
     }
-}
+}*/
 

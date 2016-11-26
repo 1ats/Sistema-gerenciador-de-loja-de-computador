@@ -1,17 +1,10 @@
 package gerenciamento.controle;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JDesktopPane;
-import javax.swing.JInternalFrame;
-import view.SACMensagem;
-import view.Sobre;
-
 /**
  *
  * @author aminathamiguel
  */
-public class ControleSobre implements ActionListener {
+/*public class ControleSobre implements ActionListener {
 
     public static JDesktopPane jdprincipal;
 
@@ -46,3 +39,4 @@ public class ControleSobre implements ActionListener {
 
     }
 }
+*/

@@ -12,11 +12,11 @@ package gerenciamento.modelo;
 public class Venda {
     private Computadores comp;
     private Cliente cli;
-    private Vendedor vend;
+    private Funcionario vend;
     private int qtotal;
     private int precoTotal;
 
-    public Venda(Computadores comp, Cliente cli, Vendedor vend, int qtotal, int precoTotal) {
+    public Venda(Computadores comp, Cliente cli, Funcionario vend, int qtotal, int precoTotal) {
         this.comp = comp;
         this.cli = cli;
         this.vend = vend;
@@ -40,11 +40,11 @@ public class Venda {
         this.cli = cli;
     }
 
-    public Vendedor getVend() {
+    public Funcionario getVend() {
         return vend;
     }
 
-    public void setVend(Vendedor vend) {
+    public void setVend(Funcionario vend) {
         this.vend = vend;
     }
 

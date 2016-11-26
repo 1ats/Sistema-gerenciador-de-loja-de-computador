@@ -1,16 +1,10 @@
 package gerenciamento.controle;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JDesktopPane;
-import javax.swing.JInternalFrame;
-import view.CadastroComputadores;
-
 /**
  *
  * @author aminathamiguel
  */
-public class ControleComputador implements ActionListener {
+/*public class ControleComputador implements ActionListener {
 
     public static JDesktopPane jdprincipal;
 
@@ -46,3 +40,4 @@ public class ControleComputador implements ActionListener {
         // excluir excluir um cadastro 
         }
 }
+*/

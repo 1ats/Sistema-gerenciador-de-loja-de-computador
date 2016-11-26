@@ -1,18 +1,10 @@
 package gerenciamento.controle;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JDesktopPane;
-import javax.swing.JInternalFrame;
-import view.CadastroCliente;
-import view.ConsultarVenda;
-import view.Venda;
-
 /**
  *
  * @author aminathamiguel
  */
-public class ControleConsultarVenda implements ActionListener {
+/*public class ControleConsultarVenda implements ActionListener {
 
     public static JDesktopPane jdprincipal;
     private ConsultarVenda cvenda;
@@ -48,4 +40,4 @@ public class ControleConsultarVenda implements ActionListener {
             prod.setVisible(true);
         }
     }
-}
+}*/
