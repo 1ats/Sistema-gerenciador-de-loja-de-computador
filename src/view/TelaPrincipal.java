@@ -1,7 +1,7 @@
 package view;
 
 import gerenciamento.conexao.Conexao;
-
+import view.CadastroAdministrador;
 import java.awt.Color;
 import static java.awt.SystemColor.menu;
 
@@ -10,24 +10,22 @@ import static java.awt.SystemColor.menu;
  * @author aminathamiguel
  */
 public class TelaPrincipal extends javax.swing.JFrame {
+
     Conexao conecta = new Conexao();
-     
-    CadastroAdministrador cadadmin;
+
+    /*CadastroAdministrador cadadm;
+    CadastroFuncionario cadfunc;
     CadastroCliente cadcliente;
     
     CadastroComputadores cadcomputador;
     ConsultarVenda cvenda;
     SACMensagem smensagem;
     Sobre sobre;
-    Venda venda;
-    // Creates new form NossaTelaPrincipal
-    //Principal listener = new Principal(this);
-
+    Venda venda;*/
     public TelaPrincipal() {
         initComponents();
         conecta.conexao();
-        
-        getContentPane().setBackground(Color.WHITE);  //YELLOW
+
     }
 
     /**
@@ -51,19 +49,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         finalizarprograma = new javax.swing.JButton();
         jLabelFundoBemVindo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         menu = new javax.swing.JMenuBar();
         menuUsuario = new javax.swing.JMenu();
         jMenuItemFinalizarPrograma = new javax.swing.JMenuItem();
         menuCadastro = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        funcionario = new javax.swing.JMenuItem();
-        jMenuItemCliente = new javax.swing.JMenuItem();
-        jMenuItemComputadores = new javax.swing.JMenuItem();
+        cadastroCliente = new javax.swing.JMenuItem();
+        cadastroComputador = new javax.swing.JMenuItem();
+        cadastroAdministrador = new javax.swing.JMenuItem();
+        cadastroFuncionario = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
         jMenuItemRealizar = new javax.swing.JMenuItem();
         jMenuItemConsultar = new javax.swing.JMenuItem();
-        telabemvindo = new javax.swing.JMenu();
-        jMenuItemMensagens = new javax.swing.JMenuItem();
+        ferramentas = new javax.swing.JMenu();
+        telaBemVindo = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         jMenuItemSobre = new javax.swing.JMenuItem();
 
@@ -79,6 +78,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jdprincipal.setLayout(null);
 
@@ -170,7 +170,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdprincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)
+            .addComponent(jdprincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +179,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 0, 1300, 750);
+        getContentPane().add(jDesktopPane1);
+        jDesktopPane1.setBounds(0, 750, 100, 100);
 
         menu.setMaximumSize(new java.awt.Dimension(321, 32768));
         menu.setPreferredSize(new java.awt.Dimension(321, 22));
@@ -198,37 +201,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuCadastro.setText("Cadastro");
 
-        jMenuItem1.setText("Administrador");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        cadastroCliente.setText("Cliente");
+        cadastroCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                cadastroClienteActionPerformed(evt);
             }
         });
-        menuCadastro.add(jMenuItem1);
+        menuCadastro.add(cadastroCliente);
 
-        funcionario.setText("Funcionário");
-        funcionario.addActionListener(new java.awt.event.ActionListener() {
+        cadastroComputador.setText("Computador");
+        cadastroComputador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                funcionarioActionPerformed(evt);
+                cadastroComputadorActionPerformed(evt);
             }
         });
-        menuCadastro.add(funcionario);
+        menuCadastro.add(cadastroComputador);
 
-        jMenuItemCliente.setText("Cliente");
-        jMenuItemCliente.addActionListener(new java.awt.event.ActionListener() {
+        cadastroAdministrador.setText("Administrador");
+        cadastroAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemClienteActionPerformed(evt);
+                cadastroAdministradorActionPerformed(evt);
             }
         });
-        menuCadastro.add(jMenuItemCliente);
+        menuCadastro.add(cadastroAdministrador);
 
-        jMenuItemComputadores.setText("Computadores");
-        jMenuItemComputadores.addActionListener(new java.awt.event.ActionListener() {
+        cadastroFuncionario.setText("Funcionario");
+        cadastroFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemComputadoresActionPerformed(evt);
+                cadastroFuncionarioActionPerformed(evt);
             }
         });
-        menuCadastro.add(jMenuItemComputadores);
+        menuCadastro.add(cadastroFuncionario);
 
         menu.add(menuCadastro);
 
@@ -252,17 +255,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menu.add(menuVenda);
 
-        telabemvindo.setText("Ferramentas");
-
-        jMenuItemMensagens.setText("Tela Bem-Vindo");
-        jMenuItemMensagens.addActionListener(new java.awt.event.ActionListener() {
+        ferramentas.setText("Ferramentas");
+        ferramentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemMensagensActionPerformed(evt);
+                ferramentasActionPerformed(evt);
             }
         });
-        telabemvindo.add(jMenuItemMensagens);
 
-        menu.add(telabemvindo);
+        telaBemVindo.setText("Tela Bem-Vindo");
+        telaBemVindo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telaBemVindoActionPerformed(evt);
+            }
+        });
+        ferramentas.add(telaBemVindo);
+
+        menu.add(ferramentas);
 
         menuAjuda.setText("Ajuda");
 
@@ -282,25 +290,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
+    private void cadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroClienteActionPerformed
         // TODO add your handling code here:
         //CadastroCliente cadacliente = new CadastroCliente();
         //tela.setVisible(true);
-        if (cadcliente == null) {
+        /*if (cadcliente == null) {
             cadcliente = new CadastroCliente();
             jdprincipal.add(cadcliente);;
         }
-        cadcliente.setVisible(true);
-    }//GEN-LAST:event_jMenuItemClienteActionPerformed
+        cadcliente.setVisible(true);*/
+    }//GEN-LAST:event_cadastroClienteActionPerformed
 
     private void jMenuItemConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsultarActionPerformed
         // TODO add your handling code here:
         //cvenda.CadastroConsulVend(ConsultarVenda.getInstancia());
-        if (cvenda == null) {
+        /*if (cvenda == null) {
             cvenda = new ConsultarVenda();
             jdprincipal.add(cvenda);
         }
-        cvenda.setVisible(true);
+        cvenda.setVisible(true);*/
     }//GEN-LAST:event_jMenuItemConsultarActionPerformed
 
     private void jMenuItemFinalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFinalizarProgramaActionPerformed
@@ -309,67 +317,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemFinalizarProgramaActionPerformed
 
-    private void jMenuItemComputadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemComputadoresActionPerformed
+    private void cadastroComputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroComputadorActionPerformed
         // TODO add your handling code here:
         //cadcomputador.CadastroComp(CadastroComputadores.getInstancia());
-        if (cadcomputador == null) {
+        /*if (cadcomputador == null) {
             cadcomputador = new CadastroComputadores();
             jdprincipal.add(cadcomputador);
         }
-        cadcomputador.setVisible(true);
-    }//GEN-LAST:event_jMenuItemComputadoresActionPerformed
+        cadcomputador.setVisible(true);*/
+    }//GEN-LAST:event_cadastroComputadorActionPerformed
 
     private void jMenuItemRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRealizarActionPerformed
         // TODO add your handling code here:
-       // venda.Vendas(Venda.getInstancia());
-        if (venda == null) {
+        // venda.Vendas(Venda.getInstancia());
+        /* if (venda == null) {
             venda = new Venda();
             jdprincipal.add(venda);
         }
-        venda.setVisible(true);
+        venda.setVisible(true);*/
     }//GEN-LAST:event_jMenuItemRealizarActionPerformed
-
-    private void jMenuItemMensagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMensagensActionPerformed
-        // TODO add your handling code here:
-       // smensagem.SACMens(SACMensagem.getInstancia());
-       TelaPrincipal tela = new TelaPrincipal();
-       tela.setVisible(true);
-       dispose();
-        /*if (smensagem == null) {
-            smensagem = new SACMensagem();
-            jdprincipal.add(smensagem);;
-        }
-        smensagem.setVisible(true);*/
-    }//GEN-LAST:event_jMenuItemMensagensActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        if (cadadmin == null) {
-            cadadmin = new CadastroAdministrador();
-            jdprincipal.add(cadadmin);
-        }
-        cadadmin.setVisible(true);
-        //cadadmin.CadastroAdm(CadastroAdministrador.getInstancia());
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
         // TODO add your handling code here:
-      //  sobreinfo.SobreProgram(Sobre.getInstancia());
-        if (sobre == null) {
+        //  sobreinfo.SobreProgram(Sobre.getInstancia());
+        /*if (sobre == null) {
             sobre = new Sobre();
             jdprincipal.add(sobre);;
         }
-        sobre.setVisible(true);
+        sobre.setVisible(true);*/
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
-
-    private void funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_funcionarioActionPerformed
-        // TODO add your handling code here:
-        if (cadadmin == null) {
-            cadadmin = new CadastroAdministrador();
-            jdprincipal.add(cadadmin);
-        }
-        cadadmin.setVisible(true);
-    }//GEN-LAST:event_funcionarioActionPerformed
 
     private void pesquisarcliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarcliente4ActionPerformed
         // TODO add your handling code here:
@@ -395,6 +371,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_finalizarprogramaActionPerformed
+
+    private void ferramentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ferramentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ferramentasActionPerformed
+
+    private void telaBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telaBemVindoActionPerformed
+        // TODO add your handling code here:
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_telaBemVindoActionPerformed
+    CadastroAdministrador tela = new CadastroAdministrador();
+    private void cadastroAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroAdministradorActionPerformed
+        // TODO add your handling code here:
+
+        tela.setVisible(true);
+    }//GEN-LAST:event_cadastroAdministradorActionPerformed
+
+    private void cadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFuncionarioActionPerformed
+        // TODO add your handling code here:
+        CadastroFuncionario tela = new CadastroFuncionario();
+        tela.setVisible(true);
+    }//GEN-LAST:event_cadastroFuncionarioActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -422,6 +421,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaPrincipal().setVisible(true);
             }
@@ -431,16 +431,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrarcliente;
     private javax.swing.JButton cadastrarcomputador;
+    private javax.swing.JMenuItem cadastroAdministrador;
+    private javax.swing.JMenuItem cadastroCliente;
+    private javax.swing.JMenuItem cadastroComputador;
+    private javax.swing.JMenuItem cadastroFuncionario;
+    private javax.swing.JMenu ferramentas;
     private javax.swing.JButton finalizarprograma;
-    private javax.swing.JMenuItem funcionario;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelFundoBemVindo;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItemCliente;
-    private javax.swing.JMenuItem jMenuItemComputadores;
     private javax.swing.JMenuItem jMenuItemConsultar;
     private javax.swing.JMenuItem jMenuItemFinalizarPrograma;
-    private javax.swing.JMenuItem jMenuItemMensagens;
     private javax.swing.JMenuItem jMenuItemRealizar;
     private javax.swing.JMenuItem jMenuItemSobre;
     private javax.swing.JPanel jPanel1;
@@ -455,6 +456,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton pesquisarcliente4;
     private javax.swing.JButton pesquisarcomputador4;
     private javax.swing.JButton realizarvenda;
-    private javax.swing.JMenu telabemvindo;
+    private javax.swing.JMenuItem telaBemVindo;
     // End of variables declaration//GEN-END:variables
 }

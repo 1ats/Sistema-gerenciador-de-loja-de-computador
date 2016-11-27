@@ -5,11 +5,23 @@
  */
 package gerenciamento.modelo;
 
+import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
+
 /**
  *
  * @author aminathamiguel
  */
-public class Venda {
+public class Venda extends AbstractTableModel{
+    
+    private ArrayList linhas =  null;
+    private String[] colunas = null;
+    
+public Venda(ArrayList lin,String[] col){
+    setLinhas(lin);
+    setColunas(col);
+}
+   /* 
     private Computadores comp;
     private Cliente cli;
     private Funcionario vend;
@@ -62,6 +74,49 @@ public class Venda {
 
     public void setPrecoTotal(int precoTotal) {
         this.precoTotal = precoTotal;
+    }
+*/
+    /**
+     * @return the linhas
+     */
+    public ArrayList getLinhas() {
+        return linhas;
+    }
+
+    /**
+     * @param linhas the linhas to set
+     */
+    public void setLinhas(ArrayList linhas) {
+        this.linhas = linhas;
+    }
+
+    /**
+     * @return the colunas
+     */
+    public String[] getColunas() {
+        return colunas;
+    }
+
+    /**
+     * @param colunas the colunas to set
+     */
+    public void setColunas(String[] colunas) {
+        this.colunas = colunas;
+    }
+    
+    public int getColumnCount(){ //contagem colunas
+        return colunas.length;
+    }
+    public int getRowCount(){  //contagem linhas
+        return linhas.size();
+        
+    }
+    public String getColumnName(int numCol){ //pegar o nome da coluna
+        return colunas[numCol];
+    }
+    public Object getValueAt(int numLin, int numCol){ //receber a quantidade de linhas
+        Object[] linha = (Object[])getLinhas().get(numLin);
+        return linha[numCol];
     }
     
    

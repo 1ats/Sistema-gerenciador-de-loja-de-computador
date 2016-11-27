@@ -2,13 +2,8 @@ package gerenciamento.dao;
 
 import gerenciamento.conexao.Conexao;
 import gerenciamento.modelo.Administrador;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -40,6 +35,23 @@ public class AdministradorDAO {
         conex.desconecta();
     }
 
+    public void Excluir(Administrador admin) {
+        conex.conexao();
+        try {
+            PreparedStatement pst = conex.con.prepareStatement("delete from administrador where nome_administrador=?");
+            pst.setString(1, admin.getNome());
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso");
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(AdministradorDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro ao excluir dados!/nErro" + ex);
+
+        }
+
+        conex.desconecta();
+    }
+
     public Administrador buscaAdministrador(Administrador admin) {
         conex.conexao();
         conex.executaSql("select *from administrador where nome_administrador like'%" + admin.getPesquisa() + "%'");
@@ -54,7 +66,7 @@ public class AdministradorDAO {
             admin.setTelefone(conex.rs.getInt("telefone_administrador"));
         } catch (SQLException ex) {
             //Logger.getLogger(AdministradorDAO.class.getName()).log(Level.SEVERE, null, ex);
-                    JOptionPane.showMessageDialog(null, "Erro ao buscar adminstrador!/nErro" + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao buscar adminstrador!/nErro" + ex);
 
         }
 
