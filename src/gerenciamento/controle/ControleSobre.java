@@ -1,34 +1,26 @@
 package gerenciamento.controle;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JDesktopPane;
+import view.Sobre;
+
 /**
  *
  * @author aminathamiguel
  */
-/*public class ControleSobre implements ActionListener {
+public class ControleSobre implements ActionListener {
 
     public static JDesktopPane jdprincipal;
 
     private Sobre sobreinfo;
 
-    public ControleSobre(SACMensagem sobreinfo1) {
+    public ControleSobre(Sobre sobreinfo1) {
         this.sobreinfo = sobreinfo;
     }
-
     public ControleSobre(JDesktopPane jdprincial) {
-        this.jdprincipal = jdprincial;
+        ControleSobre.jdprincipal = jdprincial;
     }
-
-    public void SobreProgram(JInternalFrame jInternalFrame) {
-        if (jInternalFrame.isVisible()) {
-            jInternalFrame.toFront();
-            jInternalFrame.requestFocus();
-
-        } else {
-            jdprincipal.add(jInternalFrame);
-            jInternalFrame.setVisible(true);
-        }
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if ("sobre".equalsIgnoreCase(e.getActionCommand())) {
@@ -39,4 +31,3 @@ package gerenciamento.controle;
 
     }
 }
-*/

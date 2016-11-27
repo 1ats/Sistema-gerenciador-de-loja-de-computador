@@ -1,10 +1,19 @@
 package gerenciamento.controle;
 
+import gerenciamento.conexao.Conexao;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import view.CadastroAdministrador;
+import view.CadastroCliente;
+import view.CadastroComputadores;
+import view.Sobre;
+import view.TelaPrincipal;
+
 /**
  *
  * @author aminathamiguel
  */
-/*public class Principal implements ActionListener {
+public class Principal implements ActionListener {
 
     Conexao conecta = new Conexao();
     private TelaPrincipal frame1;
@@ -17,66 +26,32 @@ package gerenciamento.controle;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ("cliente".equalsIgnoreCase(e.getActionCommand()) || "cadastrarCliente".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroCliente cadcli = new CadastroCliente();
-            frame1.jdprincipal.add(cadcli);
-            cadcli.setVisible(true);
+        if ("Cadastrardministrador".equalsIgnoreCase(e.getActionCommand()) || "administradores".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador cadadmin = new CadastroAdministrador();
+            frame1.jdprincipal.add(cadadmin);
+            cadadmin.setVisible(true);
+        }
+        if ("cadastrarCliente".equalsIgnoreCase(e.getActionCommand()) || "clientes".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroCliente cadcliente = new CadastroCliente();
+            frame1.jdprincipal.add(cadcliente);
+            cadcliente.setVisible(true);
+        }
+        if ("cadastrarComputadores".equalsIgnoreCase(e.getActionCommand()) || "computadores".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroComputadores cadcomputador = new CadastroComputadores();
+            frame1.jdprincipal.add(cadcomputador);
+            cadcomputador.setVisible(true);
 
         }
-
-        if ("mensagem".equalsIgnoreCase(e.getActionCommand())) {
-            SACMensagem sacmen = new SACMensagem();
-            frame1.jdprincipal.add(sacmen);
-            sacmen.setVisible(true);
-        }
-        if ("cadastroComputadores".equalsIgnoreCase(e.getActionCommand()) || "cadastrar_Produto".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroComputadores cadcomp = new CadastroComputadores();
-            frame1.jdprincipal.add(cadcomp);
-            cadcomp.setVisible(true);
-
-        }
-
-        if ("realizarVenda".equalsIgnoreCase(e.getActionCommand()) || "realizar_Venda".equalsIgnoreCase(e.getActionCommand())) {
-            Venda v = new Venda();
-            frame1.jdprincipal.add(v);
-            v.setVisible(true);
-
-        }
-
-        if ("realizarVenda".equalsIgnoreCase(e.getActionCommand())) {
-            Venda v = new Venda();
-            frame1.jdprincipal.add(v);
-            v.setVisible(false);
-
-        }
-        if ("consultarVenda".equalsIgnoreCase(e.getActionCommand())) {
-            ConsultarVenda cvenda = new ConsultarVenda();
-            frame1.jdprincipal.add(cvenda);
-            cvenda.setVisible(true);
-        }
-
-        if ("cadastroVendedor".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroVendedor cadvend = new CadastroVendedor();
-            frame1.jdprincipal.add(cadvend);
-            cadvend.setVisible(true);
-        }
-
         if ("sobre".equalsIgnoreCase(e.getActionCommand())) {
-            Sobre s = new Sobre();
-            frame1.jdprincipal.add(s);
-            s.setVisible(true);
+            Sobre sobre = new Sobre();
+            frame1.jdprincipal.add(sobre);
+            sobre.setVisible(true);
         }
-        if ("cadastroAdministrador".equalsIgnoreCase(e.getActionCommand())) {
-            CadastroAdministrador cadadm = new CadastroAdministrador();
-            frame1.jdprincipal.add(cadadm);
-            cadadm.setVisible(true);
+        /*if ("cadastroAdministrador".equalsIgnoreCase(e.getActionCommand())) {
+            CadastroAdministrador cadadmin = new CadastroAdministrador();
+            frame1.jdprincipal.add(cadadmin);
+            cadadmin.setVisible(true);
 
-        }
-
-        if ("sacMensagem".equalsIgnoreCase(e.getActionCommand()) || "saaC".equalsIgnoreCase(e.getActionCommand())) {
-            SACMensagem sacmen = new SACMensagem();
-            frame1.jdprincipal.add(sacmen);
-            sacmen.setVisible(true);
-        }
+        }*/
     }
-}*/
+}

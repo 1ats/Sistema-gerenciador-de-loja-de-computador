@@ -11,3 +11,10 @@ Fri Nov 18 13:33:03 WAT 2016 : tuti
 Fri Nov 25 21:29:16 BRST 2016 : tuti
 Fri Nov 25 21:35:54 BRST 2016 : tuti
 Sat Nov 26 13:48:38 BRST 2016 : tuti
+Sun Nov 27 17:44:24 BRST 2016 : tuti
+Sun Nov 27 17:44:51 BRST 2016 : tuti
+Sun Nov 27 18:09:54 BRST 2016 : adm
+Sun Nov 27 18:25:01 BRST 2016 : adm
+Sun Nov 27 18:28:06 BRST 2016 : adm
+Sun Nov 27 18:28:16 BRST 2016 : adm
+Sun Nov 27 18:43:30 BRST 2016 : adm

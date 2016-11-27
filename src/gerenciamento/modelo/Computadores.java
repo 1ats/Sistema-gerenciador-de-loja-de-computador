@@ -10,24 +10,27 @@ package gerenciamento.modelo;
  * @author aminathamiguel
  */
 public class Computadores {
+    
+    private int codComputador;
     private String marca;
     private String cor;
     private String modelo;
-    private String velocidade;
     private String sitemaOpercional;
-    private String cache;
     private String memoria;
     private String garantiaFornecedor;
+    private String pesquisa;
 
-    public Computadores(String marca, String cor, String modelo, String velocidade, String sitemaOpercional, String cache, String memoria, String garantiaFornecedor) {
+    public Computadores(String marca, String cor, String modelo, String sitemaOpercional,String memoria, String garantiaFornecedor) {
         this.marca = marca;
         this.cor = cor;
         this.modelo = modelo;
-        this.velocidade = velocidade;
         this.sitemaOpercional = sitemaOpercional;
-        this.cache = cache;
         this.memoria = memoria;
         this.garantiaFornecedor = garantiaFornecedor;
+    }
+    
+    public Computadores(){
+        
     }
 
     public String getMarca() {
@@ -54,14 +57,6 @@ public class Computadores {
         this.modelo = modelo;
     }
 
-    public String getVelocidade() {
-        return velocidade;
-    }
-
-    public void setVelocidade(String velocidade) {
-        this.velocidade = velocidade;
-    }
-
     public String getSitemaOpercional() {
         return sitemaOpercional;
     }
@@ -69,15 +64,6 @@ public class Computadores {
     public void setSitemaOpercional(String sitemaOpercional) {
         this.sitemaOpercional = sitemaOpercional;
     }
-
-    public String getCache() {
-        return cache;
-    }
-
-    public void setCache(String cache) {
-        this.cache = cache;
-    }
-
     public String getMemoria() {
         return memoria;
     }
@@ -92,6 +78,34 @@ public class Computadores {
 
     public void setGarantiaFornecedor(String garantiaFornecedor) {
         this.garantiaFornecedor = garantiaFornecedor;
+    }
+
+    /**
+     * @return the pesquisa
+     */
+    public String getPesquisa() {
+        return pesquisa;
+    }
+
+    /**
+     * @param pesquisa the pesquisa to set
+     */
+    public void setPesquisa(String pesquisa) {
+        this.pesquisa = pesquisa;
+    }
+
+    /**
+     * @return the codComputador
+     */
+    public int getCodComputador() {
+        return codComputador;
+    }
+
+    /**
+     * @param codComputador the codComputador to set
+     */
+    public void setCodComputador(int codComputador) {
+        this.codComputador = codComputador;
     }
     
     

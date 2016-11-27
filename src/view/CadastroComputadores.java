@@ -1,11 +1,24 @@
 package view;
 
+import gerenciamento.conexao.Conexao;
+import gerenciamento.dao.ComputadorDAO;
+import gerenciamento.modelo.Computadores;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author aminathamiguel
  */
 public class CadastroComputadores extends javax.swing.JInternalFrame {
+    
+    Computadores comp = new Computadores();
+    ComputadorDAO computador = new ComputadorDAO();
+    
+    Conexao conex = new Conexao();
+    
+    private ActionListener listener;
 
 
     /**
@@ -24,6 +37,7 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -34,14 +48,20 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
         marca = new javax.swing.JTextField();
         cor = new javax.swing.JTextField();
         modelo = new javax.swing.JTextField();
-        sistemaOperacional = new javax.swing.JTextField();
+        sistema = new javax.swing.JTextField();
         memoria = new javax.swing.JTextField();
-        garantiaFornecedor = new javax.swing.JTextField();
+        garantia = new javax.swing.JTextField();
         cancelar = new javax.swing.JButton();
         cadastrarcomputador = new javax.swing.JButton();
-        excluir = new javax.swing.JButton();
+        excluircomputador = new javax.swing.JButton();
         novocomputador = new javax.swing.JButton();
-        pesquisarcomputador = new javax.swing.JButton();
+        buscarComp = new javax.swing.JButton();
+        pesquisar = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        codigo = new javax.swing.JTextField();
+
+        jLabel1.setText("jLabel1");
 
         setClosable(true);
         setIconifiable(true);
@@ -79,9 +99,9 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
             }
         });
 
-        sistemaOperacional.addActionListener(new java.awt.event.ActionListener() {
+        sistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sistemaOperacionalActionPerformed(evt);
+                sistemaActionPerformed(evt);
             }
         });
 
@@ -91,9 +111,9 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
             }
         });
 
-        garantiaFornecedor.addActionListener(new java.awt.event.ActionListener() {
+        garantia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                garantiaFornecedorActionPerformed(evt);
+                garantiaActionPerformed(evt);
             }
         });
 
@@ -111,78 +131,129 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
             }
         });
 
-        excluir.setText("Excluir");
+        excluircomputador.setText("Excluir");
+        excluircomputador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluircomputadorActionPerformed(evt);
+            }
+        });
 
         novocomputador.setText("Novo");
+        novocomputador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novocomputadorActionPerformed(evt);
+            }
+        });
 
-        pesquisarcomputador.setText("Pesquisar");
+        buscarComp.setText("Buscar");
+
+        jLabel5.setText("Pesquisar:");
+
+        jLabel7.setText("Código:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cor)
-                        .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(garantiaFornecedor)
-                        .addComponent(memoria)
-                        .addComponent(modelo)
-                        .addComponent(sistemaOperacional, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(excluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadastrarcomputador, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(novocomputador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pesquisarcomputador, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(15, 15, 15))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(141, Short.MAX_VALUE)
+                                .addComponent(novocomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastrarcomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(excluircomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel5))
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(buscarComp))
+                                    .addComponent(garantia, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(107, 107, 107)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel2))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(marca)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(cor, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                        .addComponent(sistema))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addGap(96, 96, 96)
+                                                    .addComponent(memoria))
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jLabel8)
+                                                    .addGap(135, 135, 135))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addGap(15, 15, 15)
+                                            .addComponent(jLabel4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(marca)
-                    .addComponent(pesquisarcomputador))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(marca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(novocomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadastrarcomputador))
-                .addGap(12, 12, 12)
+                    .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sistema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sistemaOperacional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(memoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(memoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
+                            .addComponent(garantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(garantiaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(cancelar))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buscarComp))
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(excluircomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cadastrarcomputador)
+                        .addComponent(novocomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -208,13 +279,14 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_modeloActionPerformed
 
-    private void sistemaOperacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemaOperacionalActionPerformed
+    private void sistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sistemaOperacionalActionPerformed
+    }//GEN-LAST:event_sistemaActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void corActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corActionPerformed
@@ -225,25 +297,106 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_memoriaActionPerformed
 
-    private void garantiaFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_garantiaFornecedorActionPerformed
+    private void garantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_garantiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_garantiaFornecedorActionPerformed
+    }//GEN-LAST:event_garantiaActionPerformed
 
     private void cadastrarcomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarcomputadorActionPerformed
         // TODO add your handling code here:
+        comp.setCodComputador(Integer.parseInt(codigo.getText()));
+        comp.setMarca(marca.getText());
+        comp.setCor(cor.getText());
+        comp.setModelo(modelo.getText());
+        comp.setMemoria(memoria.getText());
+        comp.setSitemaOpercional(sistema.getText());
+        comp.setGarantiaFornecedor(garantia.getText());
+        
+
+        computador.Cadastrar(comp);
+        
+        codigo.setText("");
+        marca.setText("");
+        cor.setText("");
+        modelo.setText("");
+        memoria.setText("");
+        sistema.setText("");
+        garantia.setText("");
+        
+        codigo.setEnabled(false);
+        marca.setEnabled(false);
+        cor.setEnabled(false);
+        memoria.setEnabled(false);
+        modelo.setEnabled(false);
+        sistema.setEnabled(false);
+        garantia.setEnabled(false);
+        cadastrarcomputador.setEnabled(false);
+        cancelar.setEnabled(false);
     }//GEN-LAST:event_cadastrarcomputadorActionPerformed
+
+    private void novocomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novocomputadorActionPerformed
+        // TODO add your handling code here:
+        codigo.setEnabled(true);
+        marca.setEnabled(true);
+        cor.setEnabled(true);
+        modelo.setEnabled(true);
+        memoria.setEnabled(true);
+        sistema.setEnabled(true);
+        garantia.setEnabled(true);
+        cancelar.setEnabled(true);
+        cadastrarcomputador.setEnabled(true);
+        novocomputador.setEnabled(false);
+        buscarComp.setEnabled(false);
+        excluircomputador.setEnabled(false);
+        
+    }//GEN-LAST:event_novocomputadorActionPerformed
+
+    private void excluircomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluircomputadorActionPerformed
+        // TODO add your handling code here:
+        int resposta =0; //vai guardar a resposta do usuario
+    resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
+    if(resposta == JOptionPane.YES_OPTION){
+        comp.setCodComputador(Integer.parseInt(codigo.getText()));
+        computador.Excluir(comp);
+        
+        codigo.setText("");
+        marca.setText("");
+        cor.setText("");
+        modelo.setText("");
+        memoria.setText("");
+        sistema.setText("");
+        garantia.setText("");
+        
+        codigo.setEnabled(false);
+        marca.setEnabled(false);
+        cor.setEnabled(false);
+        memoria.setEnabled(false);
+        modelo.setEnabled(false);
+        sistema.setEnabled(false);
+        garantia.setEnabled(false);
+        cadastrarcomputador.setEnabled(false);
+        cancelar.setEnabled(false);
+        novocomputador.setEnabled(true);
+        cadastrarcomputador.setEnabled(false);
+        excluircomputador.setEnabled(false);           
+    }
+    }//GEN-LAST:event_excluircomputadorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buscarComp;
     private javax.swing.JButton cadastrarcomputador;
     private javax.swing.JButton cancelar;
+    private javax.swing.JTextField codigo;
     private javax.swing.JTextField cor;
-    private javax.swing.JButton excluir;
-    private javax.swing.JTextField garantiaFornecedor;
+    private javax.swing.JButton excluircomputador;
+    private javax.swing.JTextField garantia;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -251,8 +404,8 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
     private javax.swing.JTextField memoria;
     private javax.swing.JTextField modelo;
     private javax.swing.JButton novocomputador;
-    private javax.swing.JButton pesquisarcomputador;
-    private javax.swing.JTextField sistemaOperacional;
+    private javax.swing.JTextField pesquisar;
+    private javax.swing.JTextField sistema;
     // End of variables declaration//GEN-END:variables
 
 }

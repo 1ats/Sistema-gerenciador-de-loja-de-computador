@@ -1,8 +1,15 @@
 package gerenciamento.controle;
 
+import gerenciamento.modelo.Login;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import view.TelaLogin;
+import view.TelaPrincipal;
 
 
-/*public class LoginC implements ActionListener {
+
+public class LoginC implements ActionListener {
 
     private TelaLogin frame1;
 
@@ -21,7 +28,7 @@ package gerenciamento.controle;
 
         if ("acessar".equals(ae.getActionCommand())) {
 
-            if ("adm".equals(frame1.usuario.getText()) && "1234".equals(frame1.senha.getText()) || "tuti".equals(frame1.usuario.getText()) && "1234".equals(frame1.senha.getText())) {
+            if ("adm".equals(frame1.usuario.getText()) && "1234".equals(frame1.senha.getText()) || "adm".equals(frame1.usuario.getText()) && "1234".equals(frame1.senha.getText())) {
                 JOptionPane.showMessageDialog(null, "Bem Vindo");
                 TelaPrincipal tela = new TelaPrincipal();
                 tela.setVisible(true);
@@ -31,5 +38,5 @@ package gerenciamento.controle;
             }
         }
     }
-}*/
+}
 

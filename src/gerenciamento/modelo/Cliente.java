@@ -12,47 +12,53 @@ import java.sql.Date;
  * @author aminathamiguel
  */
 public class Cliente {
-    private int cpf;
-    private Funcionario func;
     
-    private String nome;
+    private int codCliente;
+    private String nomeCliente;
+    private String nasc;
+    private String cpf;
     private String sexo;
-    private int telefone;
-    private Date dataNascimento;
+    private String telefone;
+    private String pesquisa;
 
-    public Cliente(int cpf, Funcionario func, String nome, String sexo, int telefone, Date dataNascimento) {
-        this.cpf = cpf;
-        this.func = func;
-        
-        this.nome = nome;
-        this.sexo = sexo;
-        this.telefone = telefone;
-        
-        this.dataNascimento = dataNascimento;
+    public String getPesquisa() {
+        return pesquisa;
     }
 
-    public int getCpf() {
+    public void setPesquisa(String pesquisa) {
+        this.pesquisa = pesquisa;
+    }
+
+    public int getCodCliente() {
+        return codCliente;
+    }
+
+    public void setCodCliente(int codCliente) {
+        this.codCliente = codCliente;
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public String getNasc() {
+        return nasc;
+    }
+
+    public void setNasc(String nasc) {
+        this.nasc = nasc;
+    }
+
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public Funcionario getFunc() {
-        return func;
-    }
-
-    public void setFunc(Funcionario func) {
-        this.func = func;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getSexo() {
@@ -63,19 +69,12 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }  
 }
