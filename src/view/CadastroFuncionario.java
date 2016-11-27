@@ -7,6 +7,7 @@ package view;
 
 import gerenciamento.dao.FuncionarioDAO;
 import gerenciamento.modelo.Funcionario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -121,10 +122,20 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         cadastrarFunc.setBounds(180, 220, 104, 29);
 
         excluirFunc.setText("Excluir");
+        excluirFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirFuncActionPerformed(evt);
+            }
+        });
         jPanel1.add(excluirFunc);
         excluirFunc.setBounds(300, 220, 90, 29);
 
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cancelar);
         cancelar.setBounds(410, 220, 98, 29);
 
@@ -170,6 +181,18 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         usuarioFunc.setEnabled(true);
         senhaFunc.setEnabled(true);
         tipoFunc.setEnabled(true);
+        //cancelar.setEnabled(true);
+        cadastrarFunc.setEnabled(true);
+        buscarFunc.setEnabled(false);
+        pesquisarBusca.setEnabled(false);
+        novoFunc.setEnabled(false);
+        cancelar.setEnabled(false);
+        
+        codigo.setText("");
+        usuarioFunc.setText("");
+        senhaFunc.setText("");
+        confirmarSenha.setText("");
+
     }//GEN-LAST:event_novoFuncActionPerformed
 
     private void cadastrarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncActionPerformed
@@ -185,7 +208,6 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         usuarioFunc.setText("");
         senhaFunc.setText("");
         confirmarSenha.setText("");
-
         codigo.setEnabled(false);
         usuarioFunc.setEnabled(false);
         senhaFunc.setEnabled(false);
@@ -193,6 +215,8 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         tipoFunc.setEnabled(false);
         cadastrarFunc.setEnabled(false);
         cancelar.setEnabled(false);
+        novoFunc.setEnabled(true);
+        
     }//GEN-LAST:event_cadastrarFuncActionPerformed
 
     private void buscarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarFuncActionPerformed
@@ -204,8 +228,50 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         senhaFunc.setText(f.getSenhaFuncionario());
         confirmarSenha.setText(f.getSenhaFuncionario());
         tipoFunc.setSelectedItem(f.getTipoFuncionario());
-        excluirFunc.setEnabled(true);
+        excluirFunc.setEnabled(!true);
+        cancelar.setEnabled(false);
+        novoFunc.setEnabled(true);
     }//GEN-LAST:event_buscarFuncActionPerformed
+
+    private void excluirFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirFuncActionPerformed
+        // TODO add your handling code here:
+        int resposta =0; //vai guardar a resposta do usuario
+    resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
+    if(resposta == JOptionPane.YES_OPTION){
+        func.setCodFuncionario(Integer.parseInt(codigo.getText()));
+        funcionario.Excluir(func);
+        
+        codigo.setText("");
+        usuarioFunc.setText("");
+        senhaFunc.setText("");
+        confirmarSenha.setText("");
+        
+        cancelar.setEnabled(false);
+        novoFunc.setEnabled(true);
+        excluirFunc.setEnabled(false);
+        
+    }
+    }//GEN-LAST:event_excluirFuncActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        // TODO add your handling code here:
+        
+        codigo.setEnabled(!true);
+        usuarioFunc.setEnabled(!true);
+        senhaFunc.setEnabled(!true);
+        tipoFunc.setEnabled(!true);
+        cancelar.setEnabled(!true);
+        cadastrarFunc.setEnabled(!true);
+        buscarFunc.setEnabled(!false);
+        pesquisarBusca.setEnabled(!false);
+        novoFunc.setEnabled(true);
+        excluirFunc.setEnabled(false);
+        
+        codigo.setText("");
+        usuarioFunc.setText("");
+        senhaFunc.setText("");
+        confirmarSenha.setText("");
+    }//GEN-LAST:event_cancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

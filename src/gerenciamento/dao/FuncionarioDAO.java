@@ -30,23 +30,6 @@ public class FuncionarioDAO {
 
         conex.desconecta();
     }
-
-    public void Excluir(Funcionario  func) {
-        conex.conexao();
-        try {
-            PreparedStatement pst = conex.con.prepareStatement("delete from Funcionarios  where usuario_Funcionario =?");
-            pst.setString(1, func.getUsuarioFuncionario());
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso");
-
-        } catch (SQLException ex) {
-            //Logger.getLogger(AdministradorDAO.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao excluir dados!/nErro" + ex);
-
-        }
-
-        conex.desconecta();
-    }
     
     public Funcionario buscaFuncionario(Funcionario func) {
         conex.conexao();
@@ -60,13 +43,30 @@ public class FuncionarioDAO {
 
         } catch (SQLException ex) {
             //Logger.getLogger(AdministradorDAO.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao buscar funcionário!/nErro" + ex);
+            JOptionPane.showMessageDialog(null, "Funcionario não cadastrado!/nErro");
 
         }
 
         conex.desconecta();
         return func;
 
+    }
+    
+    public void Excluir(Funcionario  func) {
+        conex.conexao();
+        try {
+            PreparedStatement pst = conex.con.prepareStatement("delete from funcionarios  where cod_funcionario =?");
+            pst.setInt(1, func.getCodFuncionario());
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso");
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(AdministradorDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro ao excluir dados!/nErro" + ex);
+
+        }
+
+        conex.desconecta();
     }
 
 }

@@ -6,8 +6,9 @@
 package view;
 
 //import ArquivoLog.Arquivo;
-
+import gerenciamento.conexao.Conexao;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -18,10 +19,13 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
+    Conexao con = new Conexao();
+
     // Arquivo arq=new Arquivo();
     //private LoginC listener = new LoginC(this);
-    public TelaLogin() throws IOException {
+    public TelaLogin() {
         initComponents();
+        con.conexao();
         /*  try {
       String dado= Arquivo.ler("C:\\Users\\HP\\Documents\\NetBeansProjects\\GerenciamentoLoja\\log.txt");
       int k = dado.length();
@@ -122,28 +126,47 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void acessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarActionPerformed
         // TODO add your handling code here:
-        if(usuario.getText().equals("adm") && senha.getText().equals("1234")){
-        TelaPrincipal tela = new TelaPrincipal();
-        tela.setVisible(true);
-        dispose();
-        }else{
-            JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválida");
+        if (usuario.getText().equals("adm") && senha.getText().equals("1234")) {
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.setVisible(true);
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválidos");
         }
+
+        /*try {
+            con.executaSql("select *from funcionarios where usuario_funcionario= '" + usuario.getText() + "'");
+            con.rs.first();
+
+            if (con.rs.getString("usuario_funcionario").equals(senha.getText())) {
+                TelaPrincipal tela = new TelaPrincipal();
+                tela.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválidos");
+            }
+        } catch (SQLException ex) {
+            //Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválidos"+ex);
+
+        }*/
+
         /*if (usuario.getText().equals("tuti") && senha.getText().equals("1234")) {
-             try {
+            try {
             Arquivo.escrever("tuti", "log.txt");
-        } catch (IOException e) {
+            } catch (IOException e) {
             e.printStackTrace();
-           
-        }
+            
+            }
             JOptionPane.showMessageDialog(null, "Bem Vindo");
             TelaPrincipal tela = new TelaPrincipal();
             tela.setVisible(true);
             dispose();
-
-        } else {
+            
+            } else {
             JOptionPane.showMessageDialog(null, "Usuário ou senha Inválida");
-        }*/
+            }*/
+
     }//GEN-LAST:event_acessarActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
@@ -190,11 +213,7 @@ public class TelaLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new TelaLogin().setVisible(true);
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Erro ao conectar o sistema");
-                }
+                new TelaLogin().setVisible(true);
             }
         });
 

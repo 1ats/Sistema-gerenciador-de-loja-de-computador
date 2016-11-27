@@ -15,8 +15,7 @@ import javax.swing.JOptionPane;
  * @author aminathamiguel
  */
 public class CadastroAdministrador extends javax.swing.JInternalFrame {
-    CadastroAdministrador cadadm = new CadastroAdministrador();
-
+    
     Administrador admin = new Administrador();
     AdministradorDAO controladmin = new AdministradorDAO();
     
@@ -327,6 +326,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         ano.setSelectedItem(adm.getDataNascimento());
         sexo.setSelectedItem(adm.getSexo());
         telefone.setText(String.valueOf(adm));
+        
 
     }//GEN-LAST:event_pesquisarActionPerformed
 
