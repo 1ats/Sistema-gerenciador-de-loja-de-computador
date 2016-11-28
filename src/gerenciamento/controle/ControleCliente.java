@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author aminathamiguel
-
+*/
 public class ControleCliente implements ActionListener {
 
     public static JDesktopPane jdprincipal;
@@ -43,4 +43,4 @@ public class ControleCliente implements ActionListener {
         }
     }
 
-} */
+} 

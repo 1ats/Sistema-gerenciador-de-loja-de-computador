@@ -14,7 +14,7 @@ import view.CadastroAdministrador;
 /**
  *
  * @author aminathamiguel
- 
+ */
 public class ControleAdministrador implements ActionListener {
 
     private CadastroAdministrador cadadmin;
@@ -78,4 +78,4 @@ public class ControleAdministrador implements ActionListener {
         }
         
     }
-}*/
+}

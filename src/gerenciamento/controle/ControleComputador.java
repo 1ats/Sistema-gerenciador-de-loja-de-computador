@@ -9,7 +9,7 @@ import view.CadastroComputadores;
 /**
  *
  * @author aminathamiguel
-
+*/
 public class ControleComputador implements ActionListener {
 
     public static JDesktopPane jdprincipal;
@@ -84,5 +84,5 @@ public class ControleComputador implements ActionListener {
         }
         // excluir excluir um cadastro 
     }*/
-   // }
-//}
+   }
+}
