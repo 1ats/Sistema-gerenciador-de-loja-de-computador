@@ -52,6 +52,8 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         buscarFunc = new javax.swing.JButton();
         pesquisarBusca = new javax.swing.JTextField();
 
+        setClosable(true);
+        setResizable(true);
         setTitle("Cadastro de Funcionários");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -63,15 +65,15 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Usuário:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 80, 60, 20);
+        jLabel2.setBounds(10, 90, 60, 20);
 
         jLabel3.setText("Senha:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 120, 50, 20);
+        jLabel3.setBounds(20, 130, 50, 20);
 
         jLabel4.setText("Confimar Senha:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(250, 120, 110, 20);
+        jLabel4.setBounds(250, 120, 110, 30);
 
         codigo.setEnabled(false);
         jPanel1.add(codigo);
@@ -79,7 +81,7 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
 
         usuarioFunc.setEnabled(false);
         jPanel1.add(usuarioFunc);
-        usuarioFunc.setBounds(70, 80, 230, 20);
+        usuarioFunc.setBounds(70, 80, 230, 30);
 
         senhaFunc.setEnabled(false);
         senhaFunc.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +90,9 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(senhaFunc);
-        senhaFunc.setBounds(70, 120, 160, 20);
-
-        confirmarSenha.setEnabled(false);
+        senhaFunc.setBounds(70, 120, 160, 30);
         jPanel1.add(confirmarSenha);
-        confirmarSenha.setBounds(360, 120, 140, 20);
+        confirmarSenha.setBounds(360, 116, 140, 30);
 
         Tipo.setText("Tipo:");
         jPanel1.add(Tipo);
@@ -181,7 +181,7 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         usuarioFunc.setEnabled(true);
         senhaFunc.setEnabled(true);
         tipoFunc.setEnabled(true);
-        //cancelar.setEnabled(true);
+        cancelar.setEnabled(true);
         cadastrarFunc.setEnabled(true);
         buscarFunc.setEnabled(false);
         pesquisarBusca.setEnabled(false);
@@ -213,7 +213,7 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         senhaFunc.setEnabled(false);
         confirmarSenha.setEnabled(false);
         tipoFunc.setEnabled(false);
-        cadastrarFunc.setEnabled(false);
+        cadastrarFunc.setEnabled(true);
         cancelar.setEnabled(false);
         novoFunc.setEnabled(true);
         

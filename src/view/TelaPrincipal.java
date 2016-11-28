@@ -1,9 +1,7 @@
 package view;
 
 import gerenciamento.conexao.Conexao;
-import view.CadastroAdministrador;
-import java.awt.Color;
-import static java.awt.SystemColor.menu;
+import view.CadastroCliente;
 
 /**
  *
@@ -19,11 +17,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     Sobre sobre = new Sobre();
 
 
-    CadastroAdministrador cadadm;
-    CadastroFuncionario cadfun;
-    CadastroCliente cadclient;
-    
-    CadastroComputadores cadcomp;
+    private CadastroAdministrador cadadm;
+    private CadastroFuncionario cadfun;
+    private CadastroCliente cadclient;
+    private CadastroComputadores cadcomp;
+    private Sobre s;
     
     public TelaPrincipal() {
         initComponents();
@@ -129,7 +127,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1.setBounds(6, 23, 209, 28);
 
         jdprincipal.add(jdbemvindo);
-        jdbemvindo.setBounds(20, 90, 650, 360);
+        jdbemvindo.setBounds(90, 110, 650, 360);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -251,7 +249,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } else {
             cadclient.setVisible(true);
             cadclient.setResizable(false);
-        }
+        }      
     }//GEN-LAST:event_cadastroClienteActionPerformed
 
     private void jMenuItemFinalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFinalizarProgramaActionPerformed
@@ -262,35 +260,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cadastroComputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroComputadorActionPerformed
         // TODO add your handling code here:
-        if (cadcomputador == null) {
-            cadcomputador = new CadastroComputadores();
-            cadcomputador.setVisible(true);
-            cadcomputador.setResizable(false);
-            jdprincipal.add(cadcomputador);
+        if (cadcomp == null) {
+            cadcomp = new CadastroComputadores();
+            cadcomp.setVisible(true);
+            cadcomp.setResizable(false);
+            jdprincipal.add(cadcomp);
         } else {
-            cadcomputador.setVisible(true);
-            cadcomputador.setResizable(false);
+            cadcomp.setVisible(true);
+            cadcomp.setResizable(false);
         }
     }//GEN-LAST:event_cadastroComputadorActionPerformed
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
         // TODO add your handling code here:
-        if (sobre == null) {
-            sobre = new Sobre();
-            sobre.setVisible(true);
-            sobre.setResizable(false);
-            jdprincipal.add(sobre);
+        if (s == null) {
+            s = new Sobre();
+            s.setVisible(true);
+            s.setResizable(false);
+            jdprincipal.add(s);
         }
-        sobre.setVisible(true);
-        sobre.setResizable(false);
+        s.setVisible(true);
+        s.setResizable(false);
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     private void cadastrarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarclienteActionPerformed
         // TODO add your handling code here:
+        if (cadclient == null) {
+            cadclient = new CadastroCliente();
+            cadclient.setVisible(true);
+            cadclient.setResizable(false);
+            jdprincipal.add(cadclient);
+        } else {
+            cadclient.setVisible(true);
+            cadclient.setResizable(false);
+        }
     }//GEN-LAST:event_cadastrarclienteActionPerformed
 
     private void cadastrarcomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarcomputadorActionPerformed
         // TODO add your handling code here:
+        if (cadcomp == null) {
+            cadcomp = new CadastroComputadores();
+            cadcomp.setVisible(true);
+            cadcomp.setResizable(false);
+            jdprincipal.add(cadcomp);
+        } else {
+            cadcomp.setVisible(true);
+            cadcomp.setResizable(false);
+        }
     }//GEN-LAST:event_cadastrarcomputadorActionPerformed
 
     private void finalizarprogramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarprogramaActionPerformed
@@ -311,27 +327,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cadastroAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroAdministradorActionPerformed
         // TODO add your handling code here:
-        if (cadadmin == null) {
-            cadadmin = new CadastroAdministrador();
-            cadadmin.setVisible(true);
+        if (cadadm == null) {
+            cadadm = new CadastroAdministrador();
+            cadadm.setVisible(true);
             //cadadmin.setResizable(false);
-            jdprincipal.add(cadadmin);
+            jdprincipal.add(cadadm);
         } else {
-            cadadmin.setVisible(true);
+            cadadm.setVisible(true);
             //cadadmin.setResizable(false);
         }
     }//GEN-LAST:event_cadastroAdministradorActionPerformed
 
     private void cadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFuncionarioActionPerformed
         // TODO add your handling code here:
-        if (cadfunc == null) {
-            cadfunc = new CadastroFuncionario();
-            cadfunc.setVisible(true);
-            cadfunc.setResizable(false);
-            jdprincipal.add(cadfunc);
+        if (cadfun == null) {
+            cadfun = new CadastroFuncionario();
+            cadfun.setVisible(true);
+            cadfun.setResizable(false);
+            jdprincipal.add(cadfun);
         } else {
-            cadfunc.setVisible(true);
-            cadfunc.setResizable(false);
+            cadfun.setVisible(true);
+            cadfun.setResizable(false);
         }
     }//GEN-LAST:event_cadastroFuncionarioActionPerformed
 

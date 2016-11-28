@@ -258,6 +258,23 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         cli.setSexo((String) sexo.getSelectedItem());
         cli.setTelefone(telefone.getText());
         cliente.Cadastrar(cli);
+        
+        cliente.Cadastrar(cli);
+        
+        codigo.setText("");
+        nome.setText("");
+        dataNasc.setText("");
+        cpf.setText("");
+        telefone.setText("");
+        codigo.setEnabled(false);
+        codigo.setEnabled(false);
+        nome.setEnabled(false);
+        dataNasc.setEnabled(false);
+        cpf.setEnabled(false);
+        telefone.setEnabled(false);
+        cadastrar.setEnabled(true);
+        cancelar.setEnabled(false);
+        novocliente.setEnabled(true);
     }//GEN-LAST:event_cadastrarActionPerformed
 
     private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
@@ -309,12 +326,12 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         nome.setEnabled(true);
         dataNasc.setEnabled(true);
         cpf.setEnabled(true);
-        //cancelar.setEnabled(true);
+        cancelar.setEnabled(true);
         sexo.setEnabled(true);
         telefone.setEnabled(true);
         pesquisarBusca.setEnabled(false);
         novocliente.setEnabled(false);
-        cadastrar.setEnabled(false);
+        cadastrar.setEnabled(true);
         excluir.setEnabled(false);
         cancelar.setEnabled(true);
         

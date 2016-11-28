@@ -6,20 +6,18 @@ import gerenciamento.modelo.Computadores;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author aminathamiguel
  */
 public class CadastroComputadores extends javax.swing.JInternalFrame {
-    
+
     Computadores comp = new Computadores();
     ComputadorDAO computador = new ComputadorDAO();
-    
-    Conexao conex = new Conexao();
-    
-    private ActionListener listener;
 
+    Conexao conex = new Conexao();
+
+    private ActionListener listener;
 
     /**
      * Creates new form CadastroComputadores
@@ -286,7 +284,6 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        System.exit(0);
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void corActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corActionPerformed
@@ -310,27 +307,35 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
         comp.setMemoria(memoria.getText());
         comp.setSitemaOpercional(sistema.getText());
         comp.setGarantiaFornecedor(garantia.getText());
-        
 
         computador.Cadastrar(comp);
-        
-        codigo.setText("");
-        marca.setText("");
-        cor.setText("");
-        modelo.setText("");
-        memoria.setText("");
-        sistema.setText("");
-        garantia.setText("");
-        
-        codigo.setEnabled(false);
-        marca.setEnabled(false);
-        cor.setEnabled(false);
-        memoria.setEnabled(false);
-        modelo.setEnabled(false);
-        sistema.setEnabled(false);
-        garantia.setEnabled(false);
-        cadastrarcomputador.setEnabled(false);
-        cancelar.setEnabled(false);
+        try {
+            if (validarCampos()) {
+                JOptionPane.showMessageDialog(this, "Computador cadastrado com sucesso");
+
+                codigo.setText("");
+                marca.setText("");
+                cor.setText("");
+                modelo.setText("");
+                memoria.setText("");
+                sistema.setText("");
+                garantia.setText("");
+
+                codigo.setEnabled(false);
+                marca.setEnabled(false);
+                cor.setEnabled(false);
+                memoria.setEnabled(false);
+                modelo.setEnabled(false);
+                sistema.setEnabled(false);
+                garantia.setEnabled(false);
+                cadastrarcomputador.setEnabled(false);
+                cancelar.setEnabled(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Insira somente valores numéricos");
+        }
     }//GEN-LAST:event_cadastrarcomputadorActionPerformed
 
     private void novocomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novocomputadorActionPerformed
@@ -347,38 +352,38 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
         novocomputador.setEnabled(false);
         buscarComp.setEnabled(false);
         excluircomputador.setEnabled(false);
-        
+
     }//GEN-LAST:event_novocomputadorActionPerformed
 
     private void excluircomputadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluircomputadorActionPerformed
         // TODO add your handling code here:
-        int resposta =0; //vai guardar a resposta do usuario
-    resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
-    if(resposta == JOptionPane.YES_OPTION){
-        comp.setCodComputador(Integer.parseInt(codigo.getText()));
-        computador.Excluir(comp);
-        
-        codigo.setText("");
-        marca.setText("");
-        cor.setText("");
-        modelo.setText("");
-        memoria.setText("");
-        sistema.setText("");
-        garantia.setText("");
-        
-        codigo.setEnabled(false);
-        marca.setEnabled(false);
-        cor.setEnabled(false);
-        memoria.setEnabled(false);
-        modelo.setEnabled(false);
-        sistema.setEnabled(false);
-        garantia.setEnabled(false);
-        cadastrarcomputador.setEnabled(false);
-        cancelar.setEnabled(false);
-        novocomputador.setEnabled(true);
-        cadastrarcomputador.setEnabled(false);
-        excluircomputador.setEnabled(false);           
-    }
+        int resposta = 0; //vai guardar a resposta do usuario
+        resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
+        if (resposta == JOptionPane.YES_OPTION) {
+            comp.setCodComputador(Integer.parseInt(codigo.getText()));
+            computador.Excluir(comp);
+
+            codigo.setText("");
+            marca.setText("");
+            cor.setText("");
+            modelo.setText("");
+            memoria.setText("");
+            sistema.setText("");
+            garantia.setText("");
+
+            codigo.setEnabled(false);
+            marca.setEnabled(false);
+            cor.setEnabled(false);
+            memoria.setEnabled(false);
+            modelo.setEnabled(false);
+            sistema.setEnabled(false);
+            garantia.setEnabled(false);
+            cadastrarcomputador.setEnabled(false);
+            cancelar.setEnabled(false);
+            novocomputador.setEnabled(true);
+            cadastrarcomputador.setEnabled(false);
+            excluircomputador.setEnabled(false);
+        }
     }//GEN-LAST:event_excluircomputadorActionPerformed
 
 
@@ -408,4 +413,12 @@ public class CadastroComputadores extends javax.swing.JInternalFrame {
     private javax.swing.JTextField sistema;
     // End of variables declaration//GEN-END:variables
 
+    public boolean validarCampos() {
+        if (codigo.getText().equals("")) {
+            JOptionPane.showConfirmDialog(this, "Informe o codigo");
+            codigo.requestFocus();
+            return false;
+        }
+        return true;
+    }
 }

@@ -1,9 +1,6 @@
 package view;
 
 import gerenciamento.conexao.Conexao;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import gerenciamento.dao.AdministradorDAO;
 import gerenciamento.modelo.Administrador;
 import java.awt.event.ActionListener;
@@ -15,16 +12,15 @@ import javax.swing.JOptionPane;
  * @author aminathamiguel
  */
 public class CadastroAdministrador extends javax.swing.JInternalFrame {
-    
+
     Administrador admin = new Administrador();
     AdministradorDAO controladmin = new AdministradorDAO();
-    
+
     Conexao conex = new Conexao();
-    
+
     private ActionListener listener;
 
     //private AdministradorDAO listener = new AdministradorDAO(this);
-
     /**
      * Creates new form CadastroAdministrador
      */
@@ -67,6 +63,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setResizable(true);
         setTitle("Cadastro de Administrador");
 
         jPanelCadastroAdministrador.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Preencha todos os campos abaixo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
@@ -86,7 +83,6 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         jLabel9.setText("Telefone:");
 
         cadastrar.setText("Cadastrar");
-        cadastrar.setEnabled(false);
         cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarActionPerformed(evt);
@@ -254,11 +250,10 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pesquisar)))
+                .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pesquisar)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -316,6 +311,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
     private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
         // TODO add your handling code here:
         admin.setPesquisa(nome.getText());
+        
         Administrador adm = controladmin.buscaAdministrador(admin);
         nome.setText(adm.getNome());
         usuario.setText(adm.getUsuario());
@@ -326,7 +322,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         ano.setSelectedItem(adm.getDataNascimento());
         sexo.setSelectedItem(adm.getSexo());
         telefone.setText(String.valueOf(adm));
-        
+
 
     }//GEN-LAST:event_pesquisarActionPerformed
 
@@ -381,43 +377,43 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         novo.setEnabled(true);
         cadastrar.setEnabled(false);
         excluir.setEnabled(false);
-        
+
         //this.setVisible(false);
         //tela.setVisible(true);
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
-    int resposta =0; //vai guardar a resposta do usuario
-    resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
-    if(resposta == JOptionPane.YES_OPTION){
-        admin.setNome(nome.getText());
-        controladmin.Excluir(admin);
-        
-        nome.setText("");
-        usuario.setText("");
-        senha.setText("");
-        cpf.setText("");
-        telefone.setText("");
-        nome.setEnabled(false);
-        usuario.setEnabled(false);
-        senha.setEnabled(false);
-        cpf.setEnabled(false);
-        dia.setEnabled(false);
-        mes.setEnabled(false);
-        ano.setEnabled(false);
-        sexo.setEnabled(false);
-        telefone.setEnabled(false);
-        cancelar.setEnabled(false);
-        novo.setEnabled(true);
-        cadastrar.setEnabled(false);
-        excluir.setEnabled(false);
-        
-        
-    }
-    
+        int resposta = 0; //vai guardar a resposta do usuario
+        resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
+        if (resposta == JOptionPane.YES_OPTION) {
+            admin.setNome(nome.getText());
+            controladmin.Excluir(admin);
+
+            nome.setText("");
+            usuario.setText("");
+            senha.setText("");
+            cpf.setText("");
+            telefone.setText("");
+            nome.setEnabled(false);
+            usuario.setEnabled(false);
+            senha.setEnabled(false);
+            cpf.setEnabled(false);
+            dia.setEnabled(false);
+            mes.setEnabled(false);
+            ano.setEnabled(false);
+            sexo.setEnabled(false);
+            telefone.setEnabled(false);
+            cancelar.setEnabled(false);
+            novo.setEnabled(true);
+            cadastrar.setEnabled(false);
+            excluir.setEnabled(false);
+
+        }
+
     }//GEN-LAST:event_excluirActionPerformed
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        
         admin.setUsuario(usuario.getText());
         admin.setSenha(senha.getText());
         admin.setNome(nome.getText());
@@ -429,24 +425,33 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         admin.setTelefone(Integer.parseInt(telefone.getText()));
 
         controladmin.Cadastrar(admin);
-        
-        nome.setText("");
-        usuario.setText("");
-        senha.setText("");
-        cpf.setText("");
-        telefone.setText("");
-        nome.setEnabled(false);
-        usuario.setEnabled(false);
-        senha.setEnabled(false);
-        cpf.setEnabled(false);
-        dia.setEnabled(false);
-        mes.setEnabled(false);
-        ano.setEnabled(false);
-        sexo.setEnabled(false);
-        telefone.setEnabled(false);
-        cadastrar.setEnabled(false);
-        cancelar.setEnabled(false);
-        
+        try{
+        if (validarCampos()) {
+            JOptionPane.showMessageDialog(null, "Aministrador cadastrado com sucesso");
+
+            nome.setText("");
+            usuario.setText("");
+            senha.setText("");
+            cpf.setText("");
+            telefone.setText("");
+            nome.setEnabled(false);
+            usuario.setEnabled(false);
+            senha.setEnabled(false);
+            cpf.setEnabled(false);
+            dia.setEnabled(false);
+            mes.setEnabled(false);
+            ano.setEnabled(false);
+            sexo.setEnabled(false);
+            telefone.setEnabled(false);
+            cadastrar.setEnabled(false);
+            cancelar.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "");
+        }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Insira somente valores numéricos");
+        }
+
         /*try {
             // TODO add your handling code here:
             TelaLogin tela = new TelaLogin();
@@ -467,6 +472,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         sexo.setEnabled(true);
         telefone.setEnabled(true);
         cancelar.setEnabled(true);
+        cadastrar.setVisible(true);
     }//GEN-LAST:event_novoActionPerformed
 
 
@@ -496,4 +502,22 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 
+    public boolean validarCampos() {
+        if (nome.getText().equals("")) {
+            JOptionPane.showConfirmDialog(this, "Informe o nome");
+            nome.requestFocus();
+            return false;
+        }
+        if (usuario.getText().equals("")) {
+            JOptionPane.showConfirmDialog(this, "Informe o usuario");
+            usuario.requestFocus();
+            return false;
+        }
+        if (cpf.getText().equals("")) {
+            JOptionPane.showConfirmDialog(this, "Informe o nome");
+            cpf.requestFocus();
+            return false;
+        }
+        return true;
+    }
 }
