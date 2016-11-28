@@ -120,7 +120,7 @@ public class TelaLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválidos");
         }
         try {
-      String dado= Arquivo.ler("C://Users//aminathamiguel//NetBeansProjects//Sistema-gerenciador-de-loja-de-computador//log.txt");
+      String dado= Arquivo.ler("C:\\Users\\kiron\\Desktop\\Sistema-gerenciador-de-loja-de-computador\\log.txt");
       int k = dado.length();
              int j = 0;
 
@@ -154,23 +154,6 @@ public class TelaLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Usuário ou senha Inválidos"+ex);
 
         }*/
-
-        /*if (usuario.getText().equals("tuti") && senha.getText().equals("1234")) {
-            try {
-            Arquivo.escrever("tuti", "log.txt");
-            } catch (IOException e) {
-            e.printStackTrace();
-            
-            }
-            JOptionPane.showMessageDialog(null, "Bem Vindo");
-            TelaPrincipal tela = new TelaPrincipal();
-            tela.setVisible(true);
-            dispose();
-            
-            } else {
-            JOptionPane.showMessageDialog(null, "Usuário ou senha Inválida");
-            }*/
-
     }//GEN-LAST:event_acessarActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed

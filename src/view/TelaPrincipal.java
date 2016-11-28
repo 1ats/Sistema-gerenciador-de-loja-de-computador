@@ -16,13 +16,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     CadastroComputadores cadcomputador = new CadastroComputadores();
     Sobre sobre = new Sobre();
 
-
     private CadastroAdministrador cadadm;
     private CadastroFuncionario cadfun;
     private CadastroCliente cadclient;
     private CadastroComputadores cadcomp;
     private Sobre s;
-    
+
     public TelaPrincipal() {
         initComponents();
         conecta.conexao();
@@ -75,13 +74,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jdprincipal.setLayout(null);
-
         jdbemvindo.setClosable(true);
         jdbemvindo.setTitle("Bem Vindo");
         jdbemvindo.setToolTipText("");
         jdbemvindo.setVisible(true);
-        jdbemvindo.getContentPane().setLayout(null);
 
         cadastrarcliente.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         cadastrarcliente.setText("Cadastrar Cliente");
@@ -90,8 +86,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 cadastrarclienteActionPerformed(evt);
             }
         });
-        jdbemvindo.getContentPane().add(cadastrarcliente);
-        cadastrarcliente.setBounds(200, 110, 210, 35);
 
         cadastrarcomputador.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         cadastrarcomputador.setText("Cadastrar Computador");
@@ -101,8 +95,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 cadastrarcomputadorActionPerformed(evt);
             }
         });
-        jdbemvindo.getContentPane().add(cadastrarcomputador);
-        cadastrarcomputador.setBounds(200, 160, 210, 35);
 
         finalizarprograma.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         finalizarprograma.setText("Finalizar Programa");
@@ -112,22 +104,51 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 finalizarprogramaActionPerformed(evt);
             }
         });
-        jdbemvindo.getContentPane().add(finalizarprograma);
-        finalizarprograma.setBounds(200, 210, 210, 35);
 
         jLabelFundoBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ecran-chiffres-binaires.png"))); // NOI18N
         jLabelFundoBemVindo.setLabelFor(jdprincipal);
         jLabelFundoBemVindo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jdbemvindo.getContentPane().add(jLabelFundoBemVindo);
-        jLabelFundoBemVindo.setBounds(0, 69, 626, 245);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel1.setText("Sistema de Gerenciamento de:");
-        jdbemvindo.getContentPane().add(jLabel1);
-        jLabel1.setBounds(6, 23, 209, 28);
+
+        javax.swing.GroupLayout jdbemvindoLayout = new javax.swing.GroupLayout(jdbemvindo.getContentPane());
+        jdbemvindo.getContentPane().setLayout(jdbemvindoLayout);
+        jdbemvindoLayout.setHorizontalGroup(
+            jdbemvindoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdbemvindoLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jdbemvindoLayout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(finalizarprograma, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jdbemvindoLayout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(cadastrarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabelFundoBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jdbemvindoLayout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(cadastrarcomputador, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jdbemvindoLayout.setVerticalGroup(
+            jdbemvindoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdbemvindoLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jdbemvindoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdbemvindoLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(cadastrarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cadastrarcomputador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(finalizarprograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelFundoBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         jdprincipal.add(jdbemvindo);
-        jdbemvindo.setBounds(90, 110, 650, 360);
+        jdbemvindo.setBounds(10, 100, 650, 360);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -137,7 +158,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jdprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -240,16 +261,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroClienteActionPerformed
         // TODO add your handling code here:
-
         if (cadclient == null) {
             cadclient = new CadastroCliente();
             cadclient.setVisible(true);
             cadclient.setResizable(false);
             jdprincipal.add(cadclient);
         } else {
+            jdprincipal.add(cadclient);
             cadclient.setVisible(true);
             cadclient.setResizable(false);
-        }      
+        }
     }//GEN-LAST:event_cadastroClienteActionPerformed
 
     private void jMenuItemFinalizarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFinalizarProgramaActionPerformed
@@ -266,6 +287,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             cadcomp.setResizable(false);
             jdprincipal.add(cadcomp);
         } else {
+            jdprincipal.add(cadcomp);
             cadcomp.setVisible(true);
             cadcomp.setResizable(false);
         }
@@ -278,19 +300,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
             s.setVisible(true);
             s.setResizable(false);
             jdprincipal.add(s);
-        }
+        }else{
+        jdprincipal.add(s);
         s.setVisible(true);
         s.setResizable(false);
+        }
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     private void cadastrarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarclienteActionPerformed
         // TODO add your handling code here:
-        if (cadclient == null) {
+         if (cadclient == null) {
             cadclient = new CadastroCliente();
             cadclient.setVisible(true);
             cadclient.setResizable(false);
             jdprincipal.add(cadclient);
         } else {
+            jdprincipal.add(cadclient);
             cadclient.setVisible(true);
             cadclient.setResizable(false);
         }
@@ -304,6 +329,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             cadcomp.setResizable(false);
             jdprincipal.add(cadcomp);
         } else {
+            jdprincipal.add(cadcomp);
             cadcomp.setVisible(true);
             cadcomp.setResizable(false);
         }
@@ -330,11 +356,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if (cadadm == null) {
             cadadm = new CadastroAdministrador();
             cadadm.setVisible(true);
-            //cadadmin.setResizable(false);
+            cadadmin.setResizable(false);
             jdprincipal.add(cadadm);
         } else {
+            jdprincipal.add(cadadm);
             cadadm.setVisible(true);
-            //cadadmin.setResizable(false);
+            cadadmin.setResizable(false);
         }
     }//GEN-LAST:event_cadastroAdministradorActionPerformed
 
@@ -346,6 +373,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             cadfun.setResizable(false);
             jdprincipal.add(cadfun);
         } else {
+            jdprincipal.add(cadfun);
             cadfun.setVisible(true);
             cadfun.setResizable(false);
         }

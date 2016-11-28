@@ -54,10 +54,10 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         nome = new javax.swing.JTextField();
         cpf = new javax.swing.JTextField();
         telefone = new javax.swing.JTextField();
-        dia = new javax.swing.JComboBox<>();
-        mes = new javax.swing.JComboBox<>();
-        ano = new javax.swing.JComboBox<>();
-        sexo = new javax.swing.JComboBox<>();
+        dia = new javax.swing.JComboBox<String>();
+        mes = new javax.swing.JComboBox<String>();
+        ano = new javax.swing.JComboBox<String>();
+        sexo = new javax.swing.JComboBox<String>();
         pesquisar = new javax.swing.JButton();
         novo = new javax.swing.JButton();
 
@@ -142,7 +142,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             }
         });
 
-        dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
+        dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
         dia.setEnabled(false);
         dia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +150,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             }
         });
 
-        mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", "", "" }));
+        mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", "", "" }));
         mes.setEnabled(false);
         mes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +158,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             }
         });
 
-        ano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", " " }));
+        ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", " " }));
         ano.setEnabled(false);
         ano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +166,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             }
         });
 
-        sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        sexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino" }));
         sexo.setEnabled(false);
         sexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,57 +193,54 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         jPanelCadastroAdministradorLayout.setHorizontalGroup(
             jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroAdministradorLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroAdministradorLayout.createSequentialGroup()
-                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(11, 11, 11))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroAdministradorLayout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
-                                .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
-                                .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroAdministradorLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(senha, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cpf, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(usuario)
-                            .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
-                                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pesquisar)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroAdministradorLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(novo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroAdministradorLayout.createSequentialGroup()
+                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
+                                .addGap(82, 82, 82)
+                                .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel4)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroAdministradorLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel8)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(senha, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cpf, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(usuario)
+                            .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
+                                .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
+                                        .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pesquisar))
+                                    .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
+                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanelCadastroAdministradorLayout.setVerticalGroup(
@@ -251,7 +248,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
             .addGroup(jPanelCadastroAdministradorLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pesquisar)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -267,12 +264,11 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7)
-                    .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ano)))
+                .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ano)
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadastroAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -311,7 +307,7 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
     private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
         // TODO add your handling code here:
         admin.setPesquisa(nome.getText());
-        
+
         Administrador adm = controladmin.buscaAdministrador(admin);
         nome.setText(adm.getNome());
         usuario.setText(adm.getUsuario());
@@ -375,8 +371,18 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         telefone.setEnabled(!true);
         cancelar.setEnabled(!true);
         novo.setEnabled(true);
-        cadastrar.setEnabled(false);
+        cadastrar.setEnabled(!true);
         excluir.setEnabled(false);
+        
+        nome.setText("");
+        usuario.setText("");
+        senha.setText("");
+        cpf.setText("");
+        dia.setSelectedItem("");
+        mes.setSelectedItem("");
+        ano.setSelectedItem("");
+        sexo.setSelectedItem("");
+        telefone.setText("");
 
         //this.setVisible(false);
         //tela.setVisible(true);
@@ -413,7 +419,6 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_excluirActionPerformed
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
-        
         admin.setUsuario(usuario.getText());
         admin.setSenha(senha.getText());
         admin.setNome(nome.getText());
@@ -425,39 +430,39 @@ public class CadastroAdministrador extends javax.swing.JInternalFrame {
         admin.setTelefone(Integer.parseInt(telefone.getText()));
 
         controladmin.Cadastrar(admin);
-        try{
-        if (validarCampos()) {
-            JOptionPane.showMessageDialog(null, "Aministrador cadastrado com sucesso");
+        try {
+            if (validarCampos()) {
+                JOptionPane.showMessageDialog(this, "Aministrador cadastrado com sucesso");
 
-            nome.setText("");
-            usuario.setText("");
-            senha.setText("");
-            cpf.setText("");
-            telefone.setText("");
-            nome.setEnabled(false);
-            usuario.setEnabled(false);
-            senha.setEnabled(false);
-            cpf.setEnabled(false);
-            dia.setEnabled(false);
-            mes.setEnabled(false);
-            ano.setEnabled(false);
-            sexo.setEnabled(false);
-            telefone.setEnabled(false);
-            cadastrar.setEnabled(false);
-            cancelar.setEnabled(false);
-        } else {
-            JOptionPane.showMessageDialog(null, "");
-        }
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Insira somente valores numéricos");
+                nome.setText("");
+                usuario.setText("");
+                senha.setText("");
+                cpf.setText("");
+                telefone.setText("");
+                nome.setEnabled(false);
+                usuario.setEnabled(false);
+                senha.setEnabled(false);
+                cpf.setEnabled(false);
+                dia.setEnabled(false);
+                mes.setEnabled(false);
+                ano.setEnabled(false);
+                sexo.setEnabled(false);
+                telefone.setEnabled(false);
+                cadastrar.setEnabled(false);
+                cancelar.setEnabled(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Insira somente valores numéricos");
         }
 
         /*try {
-            // TODO add your handling code here:
-            TelaLogin tela = new TelaLogin();
-        } catch (IOException ex) {
-            Logger.getLogger(CadastroAdministrador.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+         // TODO add your handling code here:
+         TelaLogin tela = new TelaLogin();
+         } catch (IOException ex) {
+         Logger.getLogger(CadastroAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+         }*/
     }//GEN-LAST:event_cadastrarActionPerformed
 
     private void novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoActionPerformed
